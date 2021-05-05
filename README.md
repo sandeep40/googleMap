@@ -1954,12 +1954,12 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - selectedRowDarkColor - Color - Set Row color dark selected row.
       - iconColor - Color - To set the icon color.
       - isItemSelected - Function(dynamic obj) - To call function which item selected.
-      - getAvatarWidgetContent - Function(dynamic obj) - Function  
-      - toolTipMessageContent - Function(dynamic obj) - 
-      - leadingWidget - Widget- 
+      - getAvatarWidgetContent - Function(dynamic obj) - To call getAvatarWidgetContent function. 
+      - toolTipMessageContent - Function(dynamic obj) - To call toolTipMessageContent function. 
+      - leadingWidget - Widget- A widget to display before the toolbar's title.
       - backGroundColor - Color - To sets backgroundcolor.
-      - width - double - 
-      - railTextWidget - Function(dynamic obj) -
+      - width - double - To set width in double data type.
+      - railTextWidget - Function(dynamic obj) - To call railTextWidget function.
 
          
    - Example
