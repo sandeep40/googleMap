@@ -23,7 +23,8 @@
  - [GtCalendar Widget](#gtcalendar-widget)
  - [GtCurrency Widget](#gtcurrency-widget)
  - [GtButton Widget](#gtbutton-widget)
-
+ - [GtAppSideBar Widget](#gtappsidebar-widget)
+ - [GtDyamicView widget](#gtdyamicview-widget)
  
  
  
@@ -510,7 +511,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
     
    - Constructors:
       - [GtNavigationRails](components.md#gtnavigationrails-widget)({this.nrdlist,
-          this.selectedindex, this.setindex, this.isShowLable = true, this.trailing});
+          this.selectedindex, this.setindex, this.isShowLable = true, this.trailingWidget,this.navigationBackGroundColor = Colors.white, this.selectedRowColor = Colors.blueGrey, this.selectedRowDarkColor = Colors.grey, this.inconColor = Colors.black, this.onHoverHandler, this.selectedTitle = "", this.selectedTitleColor = Colors.blue, this.selectedTitleChange, this.selectedTitleOnTap, this.drawerWidth = 200, this.railIconSize = 16});
               
    - Input Parameters of GtNavigationRails Widget   
       - nrdlist - List<Rails> - Defines the appearance of the button items that are arrayed within the navigation rail. The value must be a list of two or more.
@@ -518,6 +519,18 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - setindex - Function - Called when one of the destinations is selected.
       - isShowLable - bool - Defines the layout and behavior of the labels for the default, unextended NavigationRail. When a navigation rail is extended, the labels are always shown.
       - trailingWidget - List<Widget> - The trailing List of widget is placed bottom of the rails last NavigationRailDestination. It's location is affected by groupAlignment.
+      - navigationBackGroundColor - Color - To set NavigationBackgroudColor.
+      - selectedRowColor - Color - To select any row then change color in blueGrey.
+      - selectedRowDarkColor - Color - If select row then change row color into grey. 
+      - iconColor - Color - Sets icon color black.
+      - onHoverHandler - Function(bool isSelected, dynamic item)
+      - onHover - int - 
+      - selectedTitle - String - 
+      - selectedTitleColor - Color - Sets selected title color in blue.
+      - selectedTitleChange - <Widget> - 
+      - selectedTitleOnTap - Function 
+      - drawerWidth - duble - Sets the width for
+      - railIconSize - double -
       
    - Example
     
@@ -530,38 +543,163 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtNavigationRails widget.
                 
       ```dart
-             class WelcomePage extends StatelessWidget {
-                @override
-               Widget build(BuildContext context) {
-                 var nrdrails = [
-                       Rails(Icons.folder_open, Icons.folder, "Document",
-                           "/documents/"), // Roles
-                       Rails(Icons.calendar_today_outlined, Icons.today, "Tasks",
-                           "/tasks/"),
-                       Rails(Icons.settings, Icons.settings, "Settings", "/settings/"),];
-               return Container(
-               child:  GtNavigationRails(
-                     nrdlist: nrdrails,
-                     selectedindex: 1,
-                     isShowLable: true,
-                     trailingWidget: [
-                         IconButton(
-                           icon: Icon(
-                             Icons.logout,
-                             color: context.theme.iconTheme.color.withOpacity(0.64),
-                           ),
-                         ),
-                         Text('Log Out',
-                             style: TextStyle(
-                                 color: Color(0xdd000000).withOpacity(0.64),
-                                 fontSize: context.theme.textTheme.bodyText1.fontSize,
-                                 fontFamily: AppTheme.defaultFontFamily))
-                       ],
-                     )
-               );
-            }
-         }
-     ```
+             class GtNavigationRails extends StatelessWidget {
+  GtNavigationRails({
+    this.nrdlist,
+    this.selectedindex,
+    this.setindex,
+    this.isShowLable = true,
+    this.trailingWidget,
+    this.navigationBackGroundColor = Colors.white,
+    this.selectedRowColor = Colors.blueGrey,
+    this.selectedRowDarkColor = Colors.grey,
+    this.iconColor = Colors.black,
+    this.onHoverHandler,
+    this.onHover,
+    this.selectedTitle = "",
+    this.selectedTitleColor = Colors.blue,
+    this.selectedTitleChange,
+    this.selectedTitleOnTap,
+    this.drawerWidth = 200,
+    this.railIconSize = 16,
+  });
+  final List<Rails> nrdlist;
+  final int selectedindex;
+  final Function setindex;
+  final bool isShowLable;
+  final List<Widget> trailingWidget;
+  final Color navigationBackGroundColor;
+  final Color selectedRowColor;
+  final Color selectedRowDarkColor;
+  final Color iconColor;
+  final Function(bool isSelected, dynamic item) onHoverHandler;
+  final int onHover;
+  final String selectedTitle;
+  final Color selectedTitleColor;
+  final Widget selectedTitleChange;
+  final Function selectedTitleOnTap;
+  final double drawerWidth;
+  final double railIconSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: isShowLable ? drawerWidth : 0,
+      height: double.infinity,
+      color: navigationBackGroundColor,
+      child: Column(
+        children: [
+          if (selectedTitle != "" && selectedTitle != null)
+            Container(
+                padding: EdgeInsets.only(top: 11, bottom: 15),
+                child: ListTile(
+                  onTap: () {
+                    if (selectedTitleOnTap != null) selectedTitleOnTap();
+                  },
+                  title: GtText(
+                    text: selectedTitle,
+                    textStyle: TextStyle(
+                        color: selectedRowDarkColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900),
+                  ),
+                  trailing:
+                      selectedTitleChange != null ? selectedTitleChange : null,
+                )),
+          Expanded(
+            child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: nrdlist.length,
+                itemBuilder: (context, index) {
+                  return AnimatedContainer(
+                    duration: Duration(milliseconds: 100),
+                    // color: selectedindex == index
+                    //     ? selectedRowColor
+                    //     : navigationBackGroundColor,
+                    color: navigationBackGroundColor,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border: Border(
+                        right: BorderSide(
+                          color: onHover == index
+                              ? selectedRowDarkColor
+                              : selectedindex == index
+                                  ? selectedRowDarkColor
+                                  : navigationBackGroundColor,
+                          width: 2.5,
+                        ),
+                      )),
+                      child: InkWell(
+                        onTap: () => {if (setindex != null) setindex(index)},
+                        onHover: (value) {
+                          if (onHoverHandler != null)
+                            onHoverHandler(value, index);
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              left: 7, right: 7, top: 12, bottom: 12),
+                          child: Row(
+                            children: <Widget>[
+                              nrdlist[index].imageUrl != ""
+                                  ? Padding(
+                                      padding: EdgeInsets.only(left: 2.0),
+                                      child: ImageIcon(
+                                        AssetImage(nrdlist[index].imageUrl),
+                                        size: 20,
+                                        color: selectedindex == index
+                                            ? selectedRowDarkColor
+                                            : iconColor,
+                                      ))
+                                  : GtIcon(
+                                      icondata: nrdlist[index].icon,
+                                      color: selectedindex == index
+                                          ? selectedRowDarkColor
+                                          : iconColor,
+                                      size: railIconSize,
+                                    ),
+                              Expanded(
+                                  child: Padding(
+                                padding: EdgeInsets.only(left: 15.0),
+                                child: AnimatedDefaultTextStyle(
+                                  style: TextStyle(
+                                    color: selectedindex == index
+                                        ? selectedRowDarkColor
+                                        : iconColor,
+                                    letterSpacing: onHover != null
+                                        ? onHover == index
+                                            ? 1.50
+                                            : 0.20
+                                        : 0.20,
+                                    fontWeight: selectedindex == index
+                                        ? FontWeight.w700
+                                        : null,
+                                  ),
+                                  duration: Duration(milliseconds: 100),
+                                  child: GtText(
+                                    text: nrdlist[index].label,
+                                    textStyle: TextStyle(),
+                                  ),
+                                ),
+                              ))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+          ),
+          if (trailingWidget != null) ...[
+            Column(
+              children: trailingWidget,
+             )
+           ],
+          ],
+        ),
+      );
+    }
+  }
+```
      
       - Step 3 : Result (Web/Mobile):
                       
@@ -1663,10 +1801,10 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - buttonStyle - ButtonStyle - Sets the initial date before the widget to displayed when 
       - iconColor - Color - Sets the min date range of the calendar.
       - iconPosition - TextStyle -  Sets the max date range of the calendar.
-      - iconSize - TextStyle - Function to handle Onch- 
+      - iconSize - TextStyle - Function to handle Onch. 
       - icondata - IconData - Set the icon based provided icon data.
       - onPressed - Function - Function to call events on pressed event of the button.
-      - text - String - Text to be display as label of the button
+      - text - String - Text to be display as label of the button.
       - textStyle - TextStyle - TextStyle for the label text.
       - buttonType - GtButtonType - Identifier to set the required typr of button.
       - value - dynamic - To set the value for radio button.
@@ -1772,5 +1910,380 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
        
         ![imbtn](https://user-images.githubusercontent.com/47977097/115863019-7dd02a80-a452-11eb-92b1-4706b7b40855.png)
 
+        
 
 
+
+
+# GtAppSideBar Widget
+  
+ The GtAppSideBar widget are two primary options for navigation tabs and drawers when there is insufficient space to support tabs, drawers.
+   - Benefits of GtAppSideBar Widget
+      - SideBar is design used in app secondary menu design.
+      - We can use vertical space of mobile screens optimally because most of the users in most cases use portraint mode of app orientation against landscape mode.
+      - SideBar can cover a number of navigation opetions campared to tiny main navigation bar situated either on the top or bottm of the app Even users cna scroll it further to access hidden buttons or content.
+      - SideBar can provide clear and clutter free desing.
+     
+      
+   - Constructors: 
+          - [GtAppSideBar](components.md#gtbutton-widget)(
+            {  @required this.listApp,
+               @required this.isItemSelected,
+               @required this.toolTipMessageField,
+               @required this.getAvatarWidgeContent,
+               this.selectedindex,
+               this.onTapHandler,
+               this.trailingWidget,
+               this.navigationBackGround = Colors.white,
+               this.selectedRowColor = Colors.blueGrey,
+               this.selectedRowDarkColor = Colors.grey,
+               this.iconColor = Colors.black,
+               this.leadingWidget,
+               this.backGroundColor = Colors.white,
+               this.width = 60.0,
+               this.railTextWidget
+            });
+  
+   - Input Parameters of GtAppSideBar Widget 
+      - listApps - List<dynamic> - This is fine for short list but not for a long list.
+      - trailingWidget - List<Widget> - List are made up of multiple rows of items, which include text, buttons, toggles, icons, thumbnails, and many more.
+      - selectedindex - int - The index into destinations for the current selected
+      - onTapHandler - Function - Function to call ListApp onTapHandler.
+      - navigationBackGroundColor - Color - To set navigationBackGroundColor.
+      - selectedRowColor - Color - Provide Row color selected row. 
+      - selectedRowDarkColor - Color - Set Row color dark selected row.
+      - iconColor - Color - To set the icon color.
+      - isItemSelected - Function(dynamic obj) - To call function which item selected.
+      - getAvatarWidgetContent - Function(dynamic obj) - Function  
+      - toolTipMessageContent - Function(dynamic obj) - 
+      - leadingWidget - Widget- 
+      - backGroundColor - Color - To sets backgroundcolor.
+      - width - double - 
+      - railTextWidget - Function(dynamic obj) -
+
+         
+   - Example
+    
+      - Step 1 : Import UI kit in files that it will be used:
+
+      ```dart
+         import 'gt_icon.dart';
+      ```
+
+      - Step 2 : Used GtAppSideBar widget as shown below example.
+                
+      ```dart
+            
+
+class GtAppSideBar extends StatelessWidget {
+  GtAppSideBar({
+    @required this.listApps,
+    @required this.isItemSelected,
+    @required this.toolTipMessageField,
+    @required this.getAvatarWidgetContent,
+    this.selectedindex,
+    this.onTapHandler,
+    this.trailingWidget,
+    this.navigationBackGroundColor = Colors.white,
+    this.selectedRowColor = Colors.blueGrey,
+    this.selectedRowDarkColor = Colors.grey,
+    this.iconColor = Colors.black,
+    this.leadingWidget,
+    this.backGroundColor = Colors.white,
+    this.width = 60.0,
+    this.railTextWidget,
+  }) : assert(listApps != null),
+      assert(isItemSelected != null),
+      assert(toolTipMessageField != null),
+      assert(getAvatarWidgetContent != null);
+
+  final List<dynamic> listApps;
+  final List<Widget> trailingWidget;
+  final int selectedindex;
+  final Function onTapHandler;
+  final Color navigationBackGroundColor;
+  final Color selectedRowColor;
+  final Color selectedRowDarkColor;
+  final Color iconColor;
+  final Function(dynamic obj) isItemSelected;
+  final Function(dynamic obj) getAvatarWidgetContent;
+  final Function(dynamic obj) toolTipMessageField;
+  final Widget leadingWidget;
+  final Color backGroundColor;
+  final double width;
+  final Function(dynamic obj) railTextWidget;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: backGroundColor,
+      width: width,
+      height: double.infinity,
+      padding: EdgeInsets.only(right: 10,left: 10),
+      child: Column(
+        children: [
+         leadingWidget != null ?Padding(
+            padding: EdgeInsets.only(top: 15,bottom: 15),
+            child: leadingWidget,
+          ): Container(),
+          Expanded(
+            child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: listApps.length,
+                itemBuilder: (context, index) {
+                  return AnimatedContainer(
+                    duration: Duration(milliseconds: 300),
+                    child: Container(
+                      padding: EdgeInsets.only(top: 5, bottom: 5),
+                      child: Tooltip(
+                        message: toolTipMessageField(listApps[index]) == null ? "" : toolTipMessageField(listApps[index]),
+                        child: Center(
+                          child: InkWell(
+                            hoverColor: navigationBackGroundColor,
+                            onTap: () => {if(onTapHandler != null) onTapHandler(listApps[index])},
+                            child : Column(
+                              children: [
+                                  CircleAvatar(
+                                  backgroundColor: isItemSelected(listApps[index])
+                                      ? selectedRowColor
+                                      : navigationBackGroundColor,
+                                    child: getAvatarWidgetContent(listApps[index])
+                                 ),
+                                if(railTextWidget != null) railTextWidget(listApps[index]),
+                               ]
+                            ),
+                          )
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+          ),
+          if (trailingWidget != null) ...[
+            Column(
+              children: trailingWidget,
+            )
+          ],
+        ],
+      ),
+    );
+  }
+}
+     ```
+     
+      - Step 3 : Result :
+       
+        ![bt1](https://user-images.githubusercontent.com/47977097/115862918-5b3e1180-a452-11eb-9c70-587b63074972.png)
+         
+        
+        ![rdbtn](https://user-images.githubusercontent.com/47977097/115862984-714bd200-a452-11eb-9038-7c5a744e58e8.png)
+         
+       
+        ![imbtn](https://user-images.githubusercontent.com/47977097/115863019-7dd02a80-a452-11eb-92b1-4706b7b40855.png)
+
+# GtDynamicView Widget
+  
+ The GtDynamicView widget is used to write corresponding parsing engines on the client side to implement dyanamic view.
+
+   - Benefits of GtDynamicView Widget
+      - Dynamic views have the benefits of transparent file access.
+      - Fast immediate updates.
+      - Also, get global view of code base.
+      - Derived objects sharing.
+      
+   - Constructors: 
+          - [GtDynamicView](components.md#gtbutton-widget)(
+            {  
+               key key,
+               this.listItems,
+               this.title,
+               this.gtTileRowCrossAxisAlignment,
+               this.gtTileRowMainAxisAlignment,
+               this.toMapjson,
+               this.rowsCount = 1,
+               this.headertextStyle
+            });
+  
+   - Input Parameters of GtAppSideBar Widget 
+      - rowsCont - int - it's called to obtain the number of rows to tell the user are available
+      - toMapjson - Map<String, dynamic>- A Map object is a key-value pair to store string or any dynamic data.
+      - listItem - dynamic - To set the value for the 
+      - gtTileRowCrossAxisAlignment - CrossAxisAlignment - To set ho items are align on the other axis
+      - gtTileRowMainAxisAlignment - MainAxisAlignment - To set how items are aligned on that axis.
+      - title - String - To set the Title. 
+      - headertextStyle - TextStyle - Sets the heardertextStyle which you want.
+      - datatextStyle - TextStyle - Sets the datatextStyle which you want. 
+
+   - Example
+    
+      - Step 1 : Import UI kit in files that it will be used:
+
+      ```dart
+         import 'gt_list_tile.dart';
+      ```
+
+      - Step 2 : Used GtDynamicView widget as shown below example.
+                
+      ```dart
+            
+class GtDynamicView extends StatelessWidget {
+  GtDynamicView(
+      {Key key,
+      this.listItems,
+      this.title,
+      this.gtTileRowCrossAxisAlignment,
+      this.gtTileRowMainAxisAlignment,
+      this.toMapjson,
+      this.rowsCount = 1,
+      this.headertextStyle,
+      this.datatextStyle})
+      : assert(listItems != null),
+        assert(rowsCount != null),
+        super(key: key);
+
+  final int rowsCount;
+  final Map<String, dynamic> toMapjson;
+  final dynamic listItems;
+  final CrossAxisAlignment gtTileRowCrossAxisAlignment;
+  final MainAxisAlignment gtTileRowMainAxisAlignment;
+  final String title;
+  final TextStyle headertextStyle;
+  final TextStyle datatextStyle;
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    Widget buildView() {
+      dynamic rowsData = {};
+
+      ///PREPARING SPECIFIED ROWS WITH THE EMPTY LIST TO ADD THE FORM WIDGETS TO
+      ///THEIR SPECIFIED ROWS FOR BOTH WEB AND MOBILE VIEW
+      for (var i = 0; i < rowsCount; i++) {
+        rowsData[i + 1] = List<Widget>.empty(growable: true);
+      }
+
+      ///GETTING THE FORM WIDGET BASED ON THE FROM_MAP_JSON MAP PASSED FOR THE VIEW
+      toMapjson.forEach((key, value) {
+        bool isMobilePortrait = size.width > 450 ? false : true;
+        int row = isMobilePortrait ? value.mobileRow : value.row;
+
+        if (row != null) {
+          rowsData[row].add(Expanded(
+            flex: value.flex,
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Common.getdynamicGtText(
+                  value, key, Common.getValue(listItems, value.valuePath),
+                  labeltextStyle: headertextStyle ??
+                      TextStyle(
+                        color: Color(0xff5a5278).withOpacity(1.0),
+                        fontFamily: 'Montserrat-Light',
+                        fontSize: 13,
+                      ),
+                  datatextStyle: datatextStyle ??
+                      TextStyle(
+                          fontFamily: 'Montserrat-Light',
+                          fontWeight: FontWeight.w600)),
+            ),
+          ));
+        }
+      });
+
+      // TO ADJUST ALIGNMENT IF LESSER FIELD
+      int currentCount = 0;
+      int rowMaxCount = 0;
+      if (true) {
+        rowsData.forEach((k, v) => {
+              if (v.length > rowMaxCount)
+                {
+                  rowMaxCount = v.length,
+                }
+            });
+        rowsData.forEach((k, v) => {
+              if (v.length < rowMaxCount && k != null)
+                {
+                  currentCount = rowMaxCount - v.length,
+                  rowsData[k].addAll(
+                    List<Widget>.generate(
+                        currentCount,
+                        (i) => Expanded(
+                              child: Container(),
+                            )),
+                  ),
+                }
+            });
+      }
+
+      List<Widget> rowsWidgets = List<Widget>.empty(growable: true);
+      int rowIndex = 0;
+      EdgeInsets _rowPadding = EdgeInsets.all(5.0);
+
+      ///HERE PREPARING THE EACH ROWS DATA WITH RESPECTIVE CHILDREN WIDGETS DATA
+      ///ALSO IF MOBILE VIEW IS PRESENT THEN ADDING THE LEADING ICON IN THE FIRST ROW
+      rowsData.forEach(
+        (k, v) => {
+          rowsWidgets.add(
+            Padding(
+              padding: _rowPadding,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: v,
+              ),
+            ),
+          ),
+          rowIndex++,
+        },
+      );
+
+      return Container(
+        alignment: Alignment.centerLeft,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          color: Colors.white,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: GtText(
+                text: title,
+                textStyle: TextStyle(
+                    color: Color(0xff5a5278).withOpacity(0.9),
+                    fontFamily: 'Montserrat-Light',
+                    fontSize: 16),
+              ),
+            ),
+            ...rowsWidgets
+          ],
+        ),
+      );
+    }
+
+    return Container(
+        color: Color(0xfff1f1f1),
+        //width: double.infinity,
+        // height: double.infinity,
+        padding: EdgeInsets.all(15.0),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [buildView()]));
+   }
+  }
+
+     ```
+     
+      - Step 3 : Result :
+       
+        ![bt1](https://user-images.githubusercontent.com/47977097/115862918-5b3e1180-a452-11eb-9c70-587b63074972.png)
+         
+        
+        ![rdbtn](https://user-images.githubusercontent.com/47977097/115862984-714bd200-a452-11eb-9038-7c5a744e58e8.png)
+         
+       
+        ![imbtn](https://user-images.githubusercontent.com/47977097/115863019-7dd02a80-a452-11eb-92b1-4706b7b40855.png)
