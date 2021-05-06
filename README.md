@@ -553,17 +553,17 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                      "/tasks/"),
                   Rails(Icons.settings, Icons.settings, "Settings", "/settings/"),];
                    return Container(
-                   child:  GtNavigationRails(
-                   nrdlist: nrdrails,
-                   selectedindex: 1,
-                   isShowLable: true,
-                   trailingWidget: [
-                    IconButton(
-                       icon: Icon(
-                        Icons.logout,
-                        color: context.theme.iconTheme.color.withOpacity(0.64),
+                     child:  GtNavigationRails(
+                     nrdlist: nrdrails,
+                     selectedindex: 1,
+                     isShowLable: true,
+                     trailingWidget: [
+                       IconButton(
+                         icon: Icon(
+                          Icons.logout,
+                          color: context.theme.iconTheme.color.withOpacity(0.64),
+                         ),
                        ),
-                     ),
                       Text('Log Out',
                         style: TextStyle(
                            color: Color(0xdd000000).withOpacity(0.64),
@@ -1864,28 +1864,28 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                  Rails(Icons.calendar_today_outlined, Icons.today, "Tasks",
                      "/tasks/"),
                  Rails(Icons.settings, Icons.settings, "Settings", "/settings/"),];
-                 return Container(
-                 child:  GtNavigationRails(
-                 nrdlist: nrdrails,
-                 selectedindex: 1,
-                 isShowLable: true,
-                 trailingWidget: [
-                   IconButton(
-                     icon: Icon(
-                       Icons.logout,
-                       color: context.theme.iconTheme.color.withOpacity(0.64),
+                  return Container(
+                    child:  GtNavigationRails(
+                     nrdlist: nrdrails,
+                     selectedindex: 1,
+                     isShowLable: true,
+                     trailingWidget: [
+                      IconButton(
+                        icon: Icon(
+                         Icons.logout,
+                         color: context.theme.iconTheme.color.withOpacity(0.64),
+                       ),
                      ),
-                   ),
-                   Text('Log Out',
-                       style: TextStyle(
-                           color: Color(0xdd000000).withOpacity(0.64),
-                           fontSize: context.theme.textTheme.bodyText1.fontSize,
-                           fontFamily: AppTheme.defaultFontFamily))
-                 ],
-               )
-          );
-        }
-     }
+                     Text('Log Out',
+                        style: TextStyle(
+                            color: Color(0xdd000000).withOpacity(0.64),
+                            fontSize: context.theme.textTheme.bodyText1.fontSize,
+                            fontFamily: AppTheme.defaultFontFamily))
+                   ],
+                )
+            );
+          }
+       }
        ```
      
       - Step 3 : Result :
@@ -1949,27 +1949,27 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                      "/tasks/"),
                  Rails(Icons.settings, Icons.settings, "Settings", "/settings/"),];
                   return Container(
-                  child:  GtNavigationRails(
-                  nrdlist: nrdrails,
-                  selectedindex: 1,
-                  isShowLable: true,
-                  trailingWidget: [
-                    IconButton(
-                      icon: Icon(
-                        Icons.logout,
-                        color: context.theme.iconTheme.color.withOpacity(0.64),
+                    child:  GtNavigationRails(
+                      nrdlist: nrdrails,
+                      selectedindex: 1,
+                      isShowLable: true,
+                      trailingWidget: [
+                        IconButton(
+                          icon: Icon(
+                            Icons.logout,
+                            color: context.theme.iconTheme.color.withOpacity(0.64),
+                         ),
                        ),
-                      ),
-                      Text('Log Out',
-                        style: TextStyle(
-                            color: Color(0xdd000000).withOpacity(0.64),
-                            fontSize: context.theme.textTheme.bodyText1.fontSize,
-                            fontFamily: AppTheme.defaultFontFamily))
-                 ],
-               )
-          );
+                       Text('Log Out',
+                         style: TextStyle(
+                             color: Color(0xdd000000).withOpacity(0.64),
+                             fontSize: context.theme.textTheme.bodyText1.fontSize,
+                             fontFamily: AppTheme.defaultFontFamily))
+                   ],
+                )
+            );
+         }
        }
-     }
      
        
        ``` 
