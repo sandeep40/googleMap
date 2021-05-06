@@ -543,160 +543,37 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtNavigationRails widget.
                 
       ```dart
-       class GtNavigationRails extends StatelessWidget {
-          GtNavigationRails({
-              this.nrdlist,
-              this.selectedindex,
-              this.setindex,
-              this.isShowLable = true,
-              this.trailingWidget,
-              this.navigationBackGroundColor = Colors.white,
-              this.selectedRowColor = Colors.blueGrey,
-              this.selectedRowDarkColor = Colors.grey,
-              this.iconColor = Colors.black,
-              this.onHoverHandler,
-              this.onHover,
-              this.selectedTitle = "",
-              this.selectedTitleColor = Colors.blue,
-              this.selectedTitleChange,
-              this.selectedTitleOnTap,
-              this.drawerWidth = 200,
-              this.railIconSize = 16,
-             });
-
-             final List<Rails> nrdlist;
-             final int selectedindex;
-             final Function setindex;
-             final bool isShowLable;
-             final List<Widget> trailingWidget;
-             final Color navigationBackGroundColor;
-             final Color selectedRowColor;
-             final Color selectedRowDarkColor;
-             final Color iconColor;
-             final Function(bool isSelected, dynamic item) onHoverHandler;
-             final int onHover;
-             final String selectedTitle;
-             final Color selectedTitleColor;
-             final Widget selectedTitleChange;
-             final Function selectedTitleOnTap;
-             final double drawerWidth;
-             final double railIconSize;
-
-         @override
-           Widget build(BuildContext context) {
-               return Container(
-                  width: isShowLable ? drawerWidth : 0,
-                  height: double.infinity,
-                  color: navigationBackGroundColor,
-                  child: Column(
-                         children: [
-                              if (selectedTitle != "" && selectedTitle != null)
-                                 Container(
-                                       padding: EdgeInsets.only(top: 11, bottom: 15),
-                                       child: ListTile(
-                                            onTap: () {
-                                               if (selectedTitleOnTap != null) selectedTitleOnTap();
-                                              },
-                                    title: GtText(
-                                      text: selectedTitle,
-                                      textStyle: TextStyle(
-                                        color: selectedRowDarkColor,
-                                         fontSize: 16,
-                                         fontWeight: FontWeight.w900),
-                                        ),
-                                     trailing:
-                                      selectedTitleChange != null ? selectedTitleChange : null,
-                                )),
-                            Expanded(
-                                child: ListView.builder(
-                                shrinkWrap: true,
-                                itemCount: nrdlist.length,
-                                itemBuilder: (context, index) {
-                                return AnimatedContainer(
-                                duration: Duration(milliseconds: 100),
-                                color: navigationBackGroundColor,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      border: Border(
-                                        right: BorderSide(
-                                        color: onHover == index
-                                        ? selectedRowDarkColor
-                                        : selectedindex == index
-                                        ? selectedRowDarkColor
-                                        : navigationBackGroundColor,
-                                          width: 2.5,
-                                       ),
-                                    )),
-                                   child: InkWell(
-                                     onTap: () => {if (setindex != null) setindex(index)},
-                                     onHover: (value) {
-                                       if (onHoverHandler != null)
-                                       onHoverHandler(value, index);
-                                      },
-                                       child: Container(
-                                       padding: EdgeInsets.only(
-                                       left: 7, right: 7, top: 12, bottom: 12),
-                                       child: Row(
-                                        children: <Widget>[
-                                          nrdlist[index].imageUrl != ""
-                                          ? Padding(
-                                          padding: EdgeInsets.only(left: 2.0),
-                                           child: ImageIcon(
-                                            AssetImage(nrdlist[index].imageUrl),
-                                            size: 20,
-                                            color: selectedindex == index
-                                            ? selectedRowDarkColor
-                                           : iconColor,
-                                           ))
-                                             : GtIcon(
-                                              icondata: nrdlist[index].icon,
-                                              color: selectedindex == index
-                                              ? selectedRowDarkColor
-                                              : iconColor,
-                                              size: railIconSize,
-                                             ),
-                                       Expanded(
-                                           child: Padding(
-                                           padding: EdgeInsets.only(left: 15.0),
-                                           child: AnimatedDefaultTextStyle(
-                                           style: TextStyle(
-                                           color: selectedindex == index
-                                            ? selectedRowDarkColor
-                                            : iconColor,
-                                            letterSpacing: onHover != null
-                                            ? onHover == index
-                                            ? 1.50
-                                            : 0.20
-                                            : 0.20,
-                                        fontWeight: selectedindex == index
-                                            ? FontWeight.w700
-                                            : null,
-                                      ),
-                                      duration: Duration(milliseconds: 100),
-                                      child: GtText(
-                                        text: nrdlist[index].label,
-                                        textStyle: TextStyle(),
-                                         ),
-                                       ),
-                                      ))
-                                     ],
-                                   ),
-                                  ),
-                                 ),
-                                ),
-                              );
-                             }),
-                            ),
-                             if (trailingWidget != null) ...[
-                             Column(
-                                  children: trailingWidget,
-                                    )
-                       ],
-                    ],
-                 ),
-              );
-            }
-        }
+       class WelcomePage extends StatelessWidget {
+          @override
+         Widget build(BuildContext context) {
+           var nrdrails = [
+                 Rails(Icons.folder_open, Icons.folder, "Document",
+                     "/documents/"), // Roles
+                 Rails(Icons.calendar_today_outlined, Icons.today, "Tasks",
+                     "/tasks/"),
+                 Rails(Icons.settings, Icons.settings, "Settings", "/settings/"),];
+         return Container(
+         child:  GtNavigationRails(
+               nrdlist: nrdrails,
+               selectedindex: 1,
+               isShowLable: true,
+               trailingWidget: [
+                   IconButton(
+                     icon: Icon(
+                       Icons.logout,
+                       color: context.theme.iconTheme.color.withOpacity(0.64),
+                     ),
+                   ),
+                   Text('Log Out',
+                       style: TextStyle(
+                           color: Color(0xdd000000).withOpacity(0.64),
+                           fontSize: context.theme.textTheme.bodyText1.fontSize,
+                           fontFamily: AppTheme.defaultFontFamily))
+                 ],
+               )
+         );
+      }
+   }
 
       
       ```
@@ -2131,156 +2008,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                 
       ```dart   
 
-      class GtDynamicView extends StatelessWidget {
-         GtDynamicView(
-           {
-             Key key,
-             this.listItems,
-             this.title,
-             this.gtTileRowCrossAxisAlignment,
-             this.gtTileRowMainAxisAlignment,
-             this.toMapjson,
-             this.rowsCount = 1,
-             this.headertextStyle,
-             this.datatextStyle})
-                : assert(listItems != null),
-                  assert(rowsCount != null),
-                  super(key: key);
-
-            final int rowsCount;
-            final Map<String, dynamic> toMapjson;
-            final dynamic listItems;
-
-            final CrossAxisAlignment gtTileRowCrossAxisAlignment;
-            final MainAxisAlignment gtTileRowMainAxisAlignment;
-            final String title;
-            final TextStyle headertextStyle;
-            final TextStyle datatextStyle;
-
-       @override
-        Widget build(BuildContext context) {
-        Size size = MediaQuery.of(context).size;
-
-        Widget buildView() {
-        dynamic rowsData = {};
-
-       ///PREPARING SPECIFIED ROWS WITH THE EMPTY LIST TO ADD THE FORM WIDGETS TO
-       ///THEIR SPECIFIED ROWS FOR BOTH WEB AND MOBILE VIEW
-        for (var i = 0; i < rowsCount; i++) {
-         rowsData[i + 1] = List<Widget>.empty(growable: true);
-        }
-
-      ///GETTING THE FORM WIDGET BASED ON THE FROM_MAP_JSON MAP PASSED FOR THE VIEW
-         toMapjson.forEach((key, value) {
-         bool isMobilePortrait = size.width > 450 ? false : true;
-         int row = isMobilePortrait ? value.mobileRow : value.row;
-
-          if (row != null) {
-            rowsData[row].add(Expanded(
-            flex: value.flex,
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Common.getdynamicGtText(
-                  value, key, Common.getValue(listItems, value.valuePath),
-                  labeltextStyle: headertextStyle ??
-                      TextStyle(
-                        color: Color(0xff5a5278).withOpacity(1.0),
-                        fontFamily: 'Montserrat-Light',
-                        fontSize: 13,
-                      ),
-                  datatextStyle: datatextStyle ??
-                      TextStyle(
-                          fontFamily: 'Montserrat-Light',
-                          fontWeight: FontWeight.w600)),
-              ),
-            ));
-          }
-        });
-
-       // TO ADJUST ALIGNMENT IF LESSER FIELD
-       int currentCount = 0;
-       int rowMaxCount = 0;
-        if (true) {
-          rowsData.forEach((k, v) => {
-              if (v.length > rowMaxCount)
-                {
-                  rowMaxCount = v.length,
-                }
-             });
-         rowsData.forEach((k, v) => {
-              if (v.length < rowMaxCount && k != null)
-                {
-                  currentCount = rowMaxCount - v.length,
-                  rowsData[k].addAll(
-                    List<Widget>.generate(
-                        currentCount,
-                        (i) => Expanded(
-                              child: Container(),
-                            )),
-                  ),
-                }
-            });
-        } 
-
-        List<Widget> rowsWidgets = List<Widget>.empty(growable: true);
-        int rowIndex = 0;
-        EdgeInsets _rowPadding = EdgeInsets.all(5.0);
-
-        ///HERE PREPARING THE EACH ROWS DATA WITH RESPECTIVE CHILDREN WIDGETS DATA
-        ///ALSO IF MOBILE VIEW IS PRESENT THEN ADDING THE LEADING ICON IN THE FIRST ROW
-        rowsData.forEach(
-         (k, v) => {
-           rowsWidgets.add(
-             Padding(
-               padding: _rowPadding,
-               child: Row(
-                 mainAxisAlignment: MainAxisAlignment.start,
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: v,
-               ),
-             ),
-            ),
-           rowIndex++,
-          },
-        );
-
-        return Container(
-         alignment: Alignment.centerLeft,
-         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          color: Colors.white,
-         ),
-         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: GtText(
-                text: title,
-                textStyle: TextStyle(
-                    color: Color(0xff5a5278).withOpacity(0.9),
-                    fontFamily: 'Montserrat-Light',
-                    fontSize: 16),
-              ),
-            ),
-            ...rowsWidgets
-           ],
-         ),
-        );
-       }
-
-         return Container(
-         color: Color(0xfff1f1f1),
-        //width: double.infinity,
-        // height: double.infinity,
-         padding: EdgeInsets.all(15.0),
-          child: Column(
-             mainAxisAlignment: MainAxisAlignment.start,
-             crossAxisAlignment: CrossAxisAlignment.start,
-             children: [buildView()]));
-        }
-      }
+     
        
        ``` 
       - Step 3 : Result :
