@@ -2342,8 +2342,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      }
    }
       
- 
-   ```
+  ```
      
       - Step 3 : Result :
        
