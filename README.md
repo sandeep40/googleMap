@@ -2339,8 +2339,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [buildView()]));
+      }
      }
-   }
       
   ```
      
