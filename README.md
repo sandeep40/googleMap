@@ -1975,63 +1975,62 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
 
       - Step 2 : Used GtAppSideBar widget as shown below example.
                 
-      ```dart
-            
-
+      ```dart         
            class GtNavigationRails extends StatelessWidget {
-  GtNavigationRails({
-    this.nrdlist,
-    this.selectedindex,
-    this.setindex,
-    this.isShowLable = true,
-    this.trailingWidget,
-    this.navigationBackGroundColor = Colors.white,
-    this.selectedRowColor = Colors.blueGrey,
-    this.selectedRowDarkColor = Colors.grey,
-    this.iconColor = Colors.black,
-    this.onHoverHandler,
-    this.onHover,
-    this.selectedTitle = "",
-    this.selectedTitleColor = Colors.blue,
-    this.selectedTitleChange,
-    this.selectedTitleOnTap,
-    this.drawerWidth = 200,
-    this.railIconSize = 16,
-  });
-  final List<Rails> nrdlist;
-  final int selectedindex;
-  final Function setindex;
-  final bool isShowLable;
-  final List<Widget> trailingWidget;
-  final Color navigationBackGroundColor;
-  final Color selectedRowColor;
-  final Color selectedRowDarkColor;
-  final Color iconColor;
-  final Function(bool isSelected, dynamic item) onHoverHandler;
-  final int onHover;
-  final String selectedTitle;
-  final Color selectedTitleColor;
-  final Widget selectedTitleChange;
-  final Function selectedTitleOnTap;
-  final double drawerWidth;
-  final double railIconSize;
+               GtNavigationRails({
+                  this.nrdlist,
+                  this.selectedindex,
+                  this.setindex,
+                  this.isShowLable = true,
+                  this.trailingWidget,
+                  this.navigationBackGroundColor = Colors.white,
+                  this.selectedRowColor = Colors.blueGrey,
+                  this.selectedRowDarkColor = Colors.grey,
+                  this.iconColor = Colors.black,
+                  this.onHoverHandler,
+                  this.onHover,
+                  this.selectedTitle = "",
+                  this.selectedTitleColor = Colors.blue,
+                  this.selectedTitleChange,
+                  this.selectedTitleOnTap,
+                  this.drawerWidth = 200,
+                  this.railIconSize = 16,
+                 });
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: isShowLable ? drawerWidth : 0,
-      height: double.infinity,
-      color: navigationBackGroundColor,
-      child: Column(
-        children: [
-          if (selectedTitle != "" && selectedTitle != null)
-            Container(
-                padding: EdgeInsets.only(top: 11, bottom: 15),
-                child: ListTile(
-                  onTap: () {
-                    if (selectedTitleOnTap != null) selectedTitleOnTap();
-                  },
-                  title: GtText(
+                final List<Rails> nrdlist;
+                final int selectedindex;
+                final Function setindex;
+                final bool isShowLable;
+                final List<Widget> trailingWidget;
+                final Color navigationBackGroundColor;
+                final Color selectedRowColor;
+                final Color selectedRowDarkColor;
+                final Color iconColor;
+                final Function(bool isSelected, dynamic item) onHoverHandler;
+                final int onHover;
+                final String selectedTitle;
+                final Color selectedTitleColor;
+                final Widget selectedTitleChange;
+                final Function selectedTitleOnTap;
+                final double drawerWidth;
+                final double railIconSize;
+
+           @override
+           Widget build(BuildContext context) {
+           return Container(
+              width: isShowLable ? drawerWidth : 0,
+              height: double.infinity,
+              color: navigationBackGroundColor,
+              child: Column(
+                children: [
+                   if (selectedTitle != "" && selectedTitle != null)
+                    Container(
+                     padding: EdgeInsets.only(top: 11, bottom: 15),
+                      child: ListTile(
+                       onTap: () {
+                     if (selectedTitleOnTap != null) selectedTitleOnTap();
+                    },
+                    title: GtText(
                     text: selectedTitle,
                     textStyle: TextStyle(
                         color: selectedRowDarkColor,
@@ -2041,16 +2040,13 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                   trailing:
                   selectedTitleChange != null ? selectedTitleChange : null,
                 )),
-          Expanded(
-            child: ListView.builder(
+              Expanded(
+                child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: nrdlist.length,
                 itemBuilder: (context, index) {
                   return AnimatedContainer(
                     duration: Duration(milliseconds: 100),
-                    // color: selectedindex == index
-                    //     ? selectedRowColor
-                    //     : navigationBackGroundColor,
                     color: navigationBackGroundColor,
                     child: Container(
                       decoration: BoxDecoration(
@@ -2061,21 +2057,21 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                                   : selectedindex == index
                                   ? selectedRowDarkColor
                                   : navigationBackGroundColor,
-                              width: 2.5,
-                            ),
-                          )),
-                      child: InkWell(
-                        onTap: () => {if (setindex != null) setindex(index)},
-                        onHover: (value) {
-                          if (onHoverHandler != null)
-                            onHoverHandler(value, index);
-                        },
-                        child: Container(
-                          padding: EdgeInsets.only(
+                                  width: 2.5,
+                               ),
+                            )),
+                         child: InkWell(
+                         onTap: () => {if (setindex != null) setindex(index)},
+                         onHover: (value) {
+                           if (onHoverHandler != null)
+                              onHoverHandler(value, index);
+                            },
+                             child: Container(
+                             padding: EdgeInsets.only(
                               left: 7, right: 7, top: 12, bottom: 12),
-                          child: Row(
-                            children: <Widget>[
-                              nrdlist[index].imageUrl != ""
+                              child: Row(
+                               children: <Widget>[
+                               nrdlist[index].imageUrl != ""
                                   ? Padding(
                                   padding: EdgeInsets.only(left: 2.0),
                                   child: ImageIcon(
@@ -2123,19 +2119,19 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                     ),
                   );
                 }),
-          ),
-          if (trailingWidget != null) ...[
-            Column(
+            ),
+             if (trailingWidget != null) ...[
+              Column(
               children: trailingWidget,
-            )
-          ],
-        ],
-      ),
-    );
-  }
-}
+             )
+            ],
+           ],
+         ),
+        );
+      }
+    }
 
-     ```
+  ```
      
       - Step 3 : Result :
        
@@ -2146,6 +2142,10 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
          
        
         ![imbtn](https://user-images.githubusercontent.com/47977097/115863019-7dd02a80-a452-11eb-92b1-4706b7b40855.png)
+
+
+
+
 
 # GtDynamicView Widget
   
@@ -2190,52 +2190,54 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
 
       - Step 2 : Used GtDynamicView widget as shown below example.
                 
-      ```dart
-            
-class GtDynamicView extends StatelessWidget {
-  GtDynamicView(
-      {Key key,
-      this.listItems,
-      this.title,
-      this.gtTileRowCrossAxisAlignment,
-      this.gtTileRowMainAxisAlignment,
-      this.toMapjson,
-      this.rowsCount = 1,
-      this.headertextStyle,
-      this.datatextStyle})
-      : assert(listItems != null),
-        assert(rowsCount != null),
-        super(key: key);
+      ```dart   
 
-  final int rowsCount;
-  final Map<String, dynamic> toMapjson;
-  final dynamic listItems;
-  final CrossAxisAlignment gtTileRowCrossAxisAlignment;
-  final MainAxisAlignment gtTileRowMainAxisAlignment;
-  final String title;
-  final TextStyle headertextStyle;
-  final TextStyle datatextStyle;
+      class GtDynamicView extends StatelessWidget {
+         GtDynamicView(
+           {
+             Key key,
+             this.listItems,
+             this.title,
+             this.gtTileRowCrossAxisAlignment,
+             this.gtTileRowMainAxisAlignment,
+             this.toMapjson,
+             this.rowsCount = 1,
+             this.headertextStyle,
+             this.datatextStyle})
+                : assert(listItems != null),
+                  assert(rowsCount != null),
+                  super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+            final int rowsCount;
+            final Map<String, dynamic> toMapjson;
+            final dynamic listItems;
 
-    Widget buildView() {
-      dynamic rowsData = {};
+            final CrossAxisAlignment gtTileRowCrossAxisAlignment;
+            final MainAxisAlignment gtTileRowMainAxisAlignment;
+            final String title;
+            final TextStyle headertextStyle;
+            final TextStyle datatextStyle;
 
-      ///PREPARING SPECIFIED ROWS WITH THE EMPTY LIST TO ADD THE FORM WIDGETS TO
-      ///THEIR SPECIFIED ROWS FOR BOTH WEB AND MOBILE VIEW
-      for (var i = 0; i < rowsCount; i++) {
-        rowsData[i + 1] = List<Widget>.empty(growable: true);
-      }
+       @override
+        Widget build(BuildContext context) {
+        Size size = MediaQuery.of(context).size;
+
+        Widget buildView() {
+        dynamic rowsData = {};
+
+       ///PREPARING SPECIFIED ROWS WITH THE EMPTY LIST TO ADD THE FORM WIDGETS TO
+       ///THEIR SPECIFIED ROWS FOR BOTH WEB AND MOBILE VIEW
+        for (var i = 0; i < rowsCount; i++) {
+         rowsData[i + 1] = List<Widget>.empty(growable: true);
+        }
 
       ///GETTING THE FORM WIDGET BASED ON THE FROM_MAP_JSON MAP PASSED FOR THE VIEW
-      toMapjson.forEach((key, value) {
-        bool isMobilePortrait = size.width > 450 ? false : true;
-        int row = isMobilePortrait ? value.mobileRow : value.row;
+         toMapjson.forEach((key, value) {
+         bool isMobilePortrait = size.width > 450 ? false : true;
+         int row = isMobilePortrait ? value.mobileRow : value.row;
 
-        if (row != null) {
-          rowsData[row].add(Expanded(
+          if (row != null) {
+            rowsData[row].add(Expanded(
             flex: value.flex,
             child: Padding(
               padding: EdgeInsets.all(10.0),
@@ -2251,22 +2253,22 @@ class GtDynamicView extends StatelessWidget {
                       TextStyle(
                           fontFamily: 'Montserrat-Light',
                           fontWeight: FontWeight.w600)),
-            ),
-          ));
-        }
-      });
+              ),
+            ));
+          }
+        });
 
-      // TO ADJUST ALIGNMENT IF LESSER FIELD
-      int currentCount = 0;
-      int rowMaxCount = 0;
-      if (true) {
-        rowsData.forEach((k, v) => {
+       // TO ADJUST ALIGNMENT IF LESSER FIELD
+       int currentCount = 0;
+       int rowMaxCount = 0;
+        if (true) {
+          rowsData.forEach((k, v) => {
               if (v.length > rowMaxCount)
                 {
                   rowMaxCount = v.length,
                 }
-            });
-        rowsData.forEach((k, v) => {
+             });
+         rowsData.forEach((k, v) => {
               if (v.length < rowMaxCount && k != null)
                 {
                   currentCount = rowMaxCount - v.length,
@@ -2279,37 +2281,37 @@ class GtDynamicView extends StatelessWidget {
                   ),
                 }
             });
-      }
+        } 
 
-      List<Widget> rowsWidgets = List<Widget>.empty(growable: true);
-      int rowIndex = 0;
-      EdgeInsets _rowPadding = EdgeInsets.all(5.0);
+        List<Widget> rowsWidgets = List<Widget>.empty(growable: true);
+        int rowIndex = 0;
+        EdgeInsets _rowPadding = EdgeInsets.all(5.0);
 
-      ///HERE PREPARING THE EACH ROWS DATA WITH RESPECTIVE CHILDREN WIDGETS DATA
-      ///ALSO IF MOBILE VIEW IS PRESENT THEN ADDING THE LEADING ICON IN THE FIRST ROW
-      rowsData.forEach(
-        (k, v) => {
-          rowsWidgets.add(
-            Padding(
-              padding: _rowPadding,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: v,
-              ),
+        ///HERE PREPARING THE EACH ROWS DATA WITH RESPECTIVE CHILDREN WIDGETS DATA
+        ///ALSO IF MOBILE VIEW IS PRESENT THEN ADDING THE LEADING ICON IN THE FIRST ROW
+        rowsData.forEach(
+         (k, v) => {
+           rowsWidgets.add(
+             Padding(
+               padding: _rowPadding,
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: v,
+               ),
+             ),
             ),
-          ),
-          rowIndex++,
-        },
-      );
+           rowIndex++,
+          },
+        );
 
-      return Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
+        return Container(
+         alignment: Alignment.centerLeft,
+         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           color: Colors.white,
-        ),
-        child: Column(
+         ),
+         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -2324,12 +2326,12 @@ class GtDynamicView extends StatelessWidget {
               ),
             ),
             ...rowsWidgets
-          ],
-        ),
-      );
-    }
+           ],
+         ),
+        );
+      }
 
-    return Container(
+       return Container(
         color: Color(0xfff1f1f1),
         //width: double.infinity,
         // height: double.infinity,
@@ -2338,10 +2340,11 @@ class GtDynamicView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [buildView()]));
-   }
+    }
   }
-
-     ```
+      
+ 
+   ```
      
       - Step 3 : Result :
        
