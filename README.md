@@ -24,7 +24,7 @@
  - [GtCurrency Widget](#gtcurrency-widget)
  - [GtButton Widget](#gtbutton-widget)
  - [GtAppSideBar Widget](#gtappsidebar-widget)
- - [GtDyamicView widget](#gtdyamicview-widget)
+ - [GtDynamicView Widget](#gtdynamicview-widget)
  
  
  
@@ -2064,7 +2064,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                       );
                     }),
                   ),
-                  
+
                   if (trailingWidget != null) ...[
                     Column(
                       children: trailingWidget,
