@@ -2119,20 +2119,17 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                     ),
                   );
                 }),
-            ),
-             if (trailingWidget != null) ...[
-              Column(
-              children: trailingWidget,
-             )
+              ),
+                  if (trailingWidget != null) ...[
+                 Column(
+                  children: trailingWidget,
+                )
+              ],
             ],
-           ],
-         ),
-        );
-      }
-    }
-
-  ```
-     
+          ),
+         );
+       }
+      }   
       - Step 3 : Result :
        
         ![bt1](https://user-images.githubusercontent.com/47977097/115862918-5b3e1180-a452-11eb-9c70-587b63074972.png)
@@ -2142,7 +2139,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
          
        
         ![imbtn](https://user-images.githubusercontent.com/47977097/115863019-7dd02a80-a452-11eb-92b1-4706b7b40855.png)
-
+  ```
 
 
 
@@ -2340,8 +2337,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [buildView()]));
-    }
-  }
+     }
+   }
       
  
    ```
