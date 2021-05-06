@@ -1976,144 +1976,88 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtAppSideBar widget as shown below example.
                 
       ```dart         
-           class GtNavigationRails extends StatelessWidget {
-               GtNavigationRails({
-                  this.nrdlist,
-                  this.selectedindex,
-                  this.setindex,
-                  this.isShowLable = true,
-                  this.trailingWidget,
-                  this.navigationBackGroundColor = Colors.white,
-                  this.selectedRowColor = Colors.blueGrey,
-                  this.selectedRowDarkColor = Colors.grey,
-                  this.iconColor = Colors.black,
-                  this.onHoverHandler,
-                  this.onHover,
-                  this.selectedTitle = "",
-                  this.selectedTitleColor = Colors.blue,
-                  this.selectedTitleChange,
-                  this.selectedTitleOnTap,
-                  this.drawerWidth = 200,
-                  this.railIconSize = 16,
-                 });
+          
 
-                final List<Rails> nrdlist;
-                final int selectedindex;
-                final Function setindex;
-                final bool isShowLable;
-                final List<Widget> trailingWidget;
-                final Color navigationBackGroundColor;
-                final Color selectedRowColor;
-                final Color selectedRowDarkColor;
-                final Color iconColor;
-                final Function(bool isSelected, dynamic item) onHoverHandler;
-                final int onHover;
-                final String selectedTitle;
-                final Color selectedTitleColor;
-                final Widget selectedTitleChange;
-                final Function selectedTitleOnTap;
-                final double drawerWidth;
-                final double railIconSize;
+       class GtAppSideBar extends StatelessWidget {
+            GtAppSideBar({
+              @required this.listApps,
+              @required this.isItemSelected,
+              @required this.toolTipMessageField,
+              @required this.getAvatarWidgetContent,
+              this.selectedindex,
+              this.onTapHandler,
+              this.trailingWidget,
+              this.navigationBackGroundColor = Colors.white,
+              this.selectedRowColor = Colors.blueGrey,
+              this.selectedRowDarkColor = Colors.grey,
+              this.iconColor = Colors.black,
+              this.leadingWidget,
+              this.backGroundColor = Colors.white,
+              this.width = 60.0,
+              this.railTextWidget,
+              
+             }) : assert(listApps != null),
+                  assert(isItemSelected != null),
+                  assert(toolTipMessageField != null),
+                  assert(getAvatarWidgetContent != null);
 
-           @override
-           Widget build(BuildContext context) {
-           return Container(
-              width: isShowLable ? drawerWidth : 0,
-              height: double.infinity,
-              color: navigationBackGroundColor,
-              child: Column(
-                children: [
-                   if (selectedTitle != "" && selectedTitle != null)
-                    Container(
-                     padding: EdgeInsets.only(top: 11, bottom: 15),
-                      child: ListTile(
-                       onTap: () {
-                     if (selectedTitleOnTap != null) selectedTitleOnTap();
-                    },
-                    title: GtText(
-                    text: selectedTitle,
-                    textStyle: TextStyle(
-                        color: selectedRowDarkColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w900),
-                  ),
-                  trailing:
-                  selectedTitleChange != null ? selectedTitleChange : null,
-                )),
-              Expanded(
-                child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: nrdlist.length,
-                itemBuilder: (context, index) {
-                  return AnimatedContainer(
-                    duration: Duration(milliseconds: 100),
-                    color: navigationBackGroundColor,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border(
-                            right: BorderSide(
-                              color: onHover == index
-                                  ? selectedRowDarkColor
-                                  : selectedindex == index
-                                  ? selectedRowDarkColor
-                                  : navigationBackGroundColor,
-                                  width: 2.5,
-                               ),
-                            )),
-                         child: InkWell(
-                         onTap: () => {if (setindex != null) setindex(index)},
-                         onHover: (value) {
-                           if (onHoverHandler != null)
-                              onHoverHandler(value, index);
-                            },
-                             child: Container(
-                             padding: EdgeInsets.only(
-                              left: 7, right: 7, top: 12, bottom: 12),
-                              child: Row(
-                               children: <Widget>[
-                               nrdlist[index].imageUrl != ""
-                                  ? Padding(
-                                  padding: EdgeInsets.only(left: 2.0),
-                                  child: ImageIcon(
-                                    AssetImage(nrdlist[index].imageUrl),
-                                    size: 20,
-                                    color: selectedindex == index
-                                        ? selectedRowDarkColor
-                                        : iconColor,
-                                  ))
-                                  : GtIcon(
-                                icondata: nrdlist[index].icon,
-                                color: selectedindex == index
-                                    ? selectedRowDarkColor
-                                    : iconColor,
-                                size: railIconSize,
-                              ),
-                              Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsets.only(left: 15.0),
-                                    child: AnimatedDefaultTextStyle(
-                                      style: TextStyle(
-                                        color: selectedindex == index
-                                            ? selectedRowDarkColor
-                                            : iconColor,
-                                        letterSpacing: onHover != null
-                                            ? onHover == index
-                                            ? 1.50
-                                            : 0.20
-                                            : 0.20,
-                                        fontWeight: selectedindex == index
-                                            ? FontWeight.w700
-                                            : null,
-                                      ),
-                                      duration: Duration(milliseconds: 100),
-                                      child: GtText(
-                                        text: nrdlist[index].label,
-                                        textStyle: TextStyle(),
-                                      ),
-                                    ),
-                                  ))
-                            ],
-                          ),
+           final List<dynamic> listApps;
+           final List<Widget> trailingWidget;
+           final int selectedindex;
+           final Function onTapHandler;
+           final Color navigationBackGroundColor;
+           final Color selectedRowColor;
+           final Color selectedRowDarkColor;
+           final Color iconColor;
+           final Function(dynamic obj) isItemSelected;
+           final Function(dynamic obj) getAvatarWidgetContent;
+           final Function(dynamic obj) toolTipMessageField;
+           final Widget leadingWidget;
+           final Color backGroundColor;
+           final double width;
+           final Function(dynamic obj) railTextWidget;
+
+
+        @override
+        Widget build(BuildContext context) {
+        return Container(
+          color: backGroundColor,
+          width: width,
+          height: double.infinity,
+          padding: EdgeInsets.only(right: 10,left: 10),
+          child: Column(
+            children: [
+              leadingWidget != null ?Padding(
+              padding: EdgeInsets.only(top: 15,bottom: 15),
+              child: leadingWidget,
+             ): Container(),
+               Expanded(
+                  child: ListView.builder(
+                     shrinkWrap: true,
+                     itemCount: listApps.length,
+                     itemBuilder: (context, index) {
+                     return AnimatedContainer(
+                     duration: Duration(milliseconds: 300),
+                     child: Container(
+                      padding: EdgeInsets.only(top: 5, bottom: 5),
+                      child: Tooltip(
+                        message: toolTipMessageField(listApps[index]) == null ? "" : toolTipMessageField(listApps[index]),
+                        child: Center(
+                          child: InkWell(
+                            hoverColor: navigationBackGroundColor,
+                            onTap: () => {if(onTapHandler != null) onTapHandler(listApps[index])},
+                            child : Column(
+                              children: [
+                                  CircleAvatar(
+                                  backgroundColor: isItemSelected(listApps[index])
+                                      ? selectedRowColor
+                                      : navigationBackGroundColor,
+                                    child: getAvatarWidgetContent(listApps[index])
+                                 ),
+                                if(railTextWidget != null) railTextWidget(listApps[index]),
+                               ]
+                            ),
+                          )
                         ),
                       ),
                     ),
@@ -2121,15 +2065,17 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                 }),
               ),
                   if (trailingWidget != null) ...[
-                 Column(
-                  children: trailingWidget,
-                )
-              ],
-            ],
-          ),
-         );
-       }
-      }   
+                    Column(
+                      children: trailingWidget,
+                      )
+                     ],
+                   ],
+                  ),
+                );
+              }
+           }
+
+
        ```
      
       - Step 3 : Result :
