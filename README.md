@@ -2056,14 +2056,15 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                                  ),
                                 if(railTextWidget != null) railTextWidget(listApps[index]),
                                ]
-                            ),
-                          )
+                             ),
+                            )
+                          ),
                         ),
-                      ),
-                    ),
-                  );
-                }),
-              ),
+                       ),
+                      );
+                    }),
+                  ),
+                  
                   if (trailingWidget != null) ...[
                     Column(
                       children: trailingWidget,
@@ -2072,8 +2073,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                    ],
                   ),
                 );
-              }
-           }
+             }
+          }
 
 
        ```
