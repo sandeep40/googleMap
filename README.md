@@ -543,7 +543,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtNavigationRails widget.
                 
       ```dart
-             class GtNavigationRails extends StatelessWidget {
+class GtNavigationRails extends StatelessWidget {
   GtNavigationRails({
     this.nrdlist,
     this.selectedindex,
@@ -604,7 +604,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                         fontWeight: FontWeight.w900),
                   ),
                   trailing:
-                      selectedTitleChange != null ? selectedTitleChange : null,
+                  selectedTitleChange != null ? selectedTitleChange : null,
                 )),
           Expanded(
             child: ListView.builder(
@@ -620,15 +620,15 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                     child: Container(
                       decoration: BoxDecoration(
                           border: Border(
-                        right: BorderSide(
-                          color: onHover == index
-                              ? selectedRowDarkColor
-                              : selectedindex == index
+                            right: BorderSide(
+                              color: onHover == index
+                                  ? selectedRowDarkColor
+                                  : selectedindex == index
                                   ? selectedRowDarkColor
                                   : navigationBackGroundColor,
-                          width: 2.5,
-                        ),
-                      )),
+                              width: 2.5,
+                            ),
+                          )),
                       child: InkWell(
                         onTap: () => {if (setindex != null) setindex(index)},
                         onHover: (value) {
@@ -642,45 +642,45 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                             children: <Widget>[
                               nrdlist[index].imageUrl != ""
                                   ? Padding(
-                                      padding: EdgeInsets.only(left: 2.0),
-                                      child: ImageIcon(
-                                        AssetImage(nrdlist[index].imageUrl),
-                                        size: 20,
-                                        color: selectedindex == index
-                                            ? selectedRowDarkColor
-                                            : iconColor,
-                                      ))
-                                  : GtIcon(
-                                      icondata: nrdlist[index].icon,
-                                      color: selectedindex == index
-                                          ? selectedRowDarkColor
-                                          : iconColor,
-                                      size: railIconSize,
-                                    ),
-                              Expanded(
-                                  child: Padding(
-                                padding: EdgeInsets.only(left: 15.0),
-                                child: AnimatedDefaultTextStyle(
-                                  style: TextStyle(
+                                  padding: EdgeInsets.only(left: 2.0),
+                                  child: ImageIcon(
+                                    AssetImage(nrdlist[index].imageUrl),
+                                    size: 20,
                                     color: selectedindex == index
                                         ? selectedRowDarkColor
                                         : iconColor,
-                                    letterSpacing: onHover != null
-                                        ? onHover == index
+                                  ))
+                                  : GtIcon(
+                                icondata: nrdlist[index].icon,
+                                color: selectedindex == index
+                                    ? selectedRowDarkColor
+                                    : iconColor,
+                                size: railIconSize,
+                              ),
+                              Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(left: 15.0),
+                                    child: AnimatedDefaultTextStyle(
+                                      style: TextStyle(
+                                        color: selectedindex == index
+                                            ? selectedRowDarkColor
+                                            : iconColor,
+                                        letterSpacing: onHover != null
+                                            ? onHover == index
                                             ? 1.50
                                             : 0.20
-                                        : 0.20,
-                                    fontWeight: selectedindex == index
-                                        ? FontWeight.w700
-                                        : null,
-                                  ),
-                                  duration: Duration(milliseconds: 100),
-                                  child: GtText(
-                                    text: nrdlist[index].label,
-                                    textStyle: TextStyle(),
-                                  ),
-                                ),
-                              ))
+                                            : 0.20,
+                                        fontWeight: selectedindex == index
+                                            ? FontWeight.w700
+                                            : null,
+                                      ),
+                                      duration: Duration(milliseconds: 100),
+                                      child: GtText(
+                                        text: nrdlist[index].label,
+                                        textStyle: TextStyle(),
+                                      ),
+                                    ),
+                                  ))
                             ],
                           ),
                         ),
@@ -692,14 +692,16 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
           if (trailingWidget != null) ...[
             Column(
               children: trailingWidget,
-             )
-           ],
+            )
           ],
-        ),
-      );
-    }
+        ],
+      ),
+    );
   }
-```
+}
+
+      
+      ```
      
       - Step 3 : Result (Web/Mobile):
                       
