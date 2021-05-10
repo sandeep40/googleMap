@@ -179,16 +179,16 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                   trailing: GtIcon(
                   icondata: Icons.arrow_forward_ios_rounded,
               ),
-           )
-         ],
-       ),
-     ));
-   }
+            )
+          ],
+         ),
+        ));
+      }
 
-  void checkitem(value) {
-    isSelected = value;
+      void checkitem(value) {
+       isSelected = value;
+    }
   }
-}
 
                     
               
