@@ -158,32 +158,41 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
    - Step 2 : GtIconCheckbox widget can be used as shown in the below example.
                 
    ```dart
-      class CustomerList extends StatelessWidget {
-            bool isSelected = false;
+    import 'package:flutter/material.dart';
+      import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
+
+         class CustomerList extends StatelessWidget {
+          bool isSelected = false;
           @override
-                Widget build(BuildContext context) {
-                   return Container(
-                        child: ListTile(
-                        title: GtText(
-                          text: 'Paul Walker',
-                          texttype: TextformatType.listitemkey,
-                          textOverflow: TextOverflow.ellipsis,
-                        ),
-                        subtitle:
-                            GtText(text: "USA", texttype: TextformatType.listitem),
-                        leading: GtIconCheckbox(
-                          icon: Icons.account_circle,
-                          selected: isSelected,
-                          onchanged: (value) => checkitem(value),
-                        ),
-                        trailing: GtIcon(
-                          icondata: Icons.arrow_forward_ios_rounded,
-                        ),
-                      ));
-                    }
-               void checkitem(value) {
-                   isSelected = value;
-                }}
+          Widget build(BuildContext context) {
+            return Scaffold(
+               body: Container(
+               child: ListView(
+               children: <Widget>[
+                ListTile(
+                   title: Text('Paul Walker'),
+                   subtitle: GtText(
+                     text: "USA",
+                     ),
+                     // ignore: missing_required_param
+                     leading: GtIconCheckbox(
+                       icon: Icons.account_circle,
+                       onchanged: (value) => checkitem(value),
+                       ),
+                  trailing: GtIcon(
+                  icondata: Icons.arrow_forward_ios_rounded,
+              ),
+            )
+          ],
+        ),
+      ));
+    }
+
+      void checkitem(value) {
+      isSelected = value;
+    }
+  }
+
                     
               
    ```          
