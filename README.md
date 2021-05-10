@@ -188,10 +188,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
          void checkitem(value) {
           isSelected = value;
       }
+     }
     }
-  
-                    
-              
   ```          
    
    - Step 3 : Result :
