@@ -111,7 +111,7 @@ The gticon widget is used represent the Icon on the Screen with responsive sizin
    - Example
      - Step 1 : Import core in files that it will be used:
      ```dart
-        import 'package:core/core.dart';
+        import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
      ```
      - Step 2 : GtIcon widget can be used as shown in the below example where color and size are the optional Paramters if not specified the widget will handles it with its own creative way.
      ```dart
