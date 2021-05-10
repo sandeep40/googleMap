@@ -162,26 +162,25 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
             bool isSelected = false;
           @override
                 Widget build(BuildContext context) {
-                   return Container(
-                        child: ListTile(
-                        title: GtText(
-                          text: 'Paul Walker',
-                          texttype: TextformatType.listitemkey,
-                          textOverflow: TextOverflow.ellipsis,
-                        ),
-                        subtitle:
-                            GtText(text: "USA", texttype: TextformatType.listitem),
-                        leading: GtIconCheckbox(
-                          icon: Icons.account_circle,
-                          selected: isSelected,
-                          onchanged: (value) => checkitem(value),
-                        ),
-                        trailing: GtIcon(
-                          icondata: Icons.arrow_forward_ios_rounded,
-                        ),
-                      ));
+                   return Scaffold(
+                        body: Container(
+                        child: ListView(
+                          children: <Widget>:[
+                             ListTile(
+                                title: 'Paul Walker'),
+                                subtitle: GtText(text: 'USA'),
+                              // ignore: missing_required_param
+                              leading: GtIconCheckbox(
+                              icon: Icons.account_circle,
+                              selected: isSelected,
+                              onchanged: (value) => checkitem (value),
+                           ),
+                            trailing: GtIcon(
+                            icondata: Icons.arrow_forward_ios_rounded,
+                          ),
+                       ));
                     }
-               void checkitem(value) {
+                   void checkitem(value) {
                    isSelected = value;
                 }}
                     
