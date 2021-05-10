@@ -158,42 +158,39 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
    - Step 2 : GtIconCheckbox widget can be used as shown in the below example.
                 
    ```dart
-          class CustomerList extends StatelessWidget {
-           bool isSelected = false;
-           @override
-            Widget build(BuildContext context) {
-              return Scaffold(
-                body: Container(
-                 child: ListView(
-                  children: <Widget>[
-                    ListTile(
-                      title: Text('Paul Walker'),
-                      subtitle: GtText(
-                      text: 'USA',
-                   ),
-                  // ignore: missing_required_param
-                  leading: GtIconCheckbox(
-                  icon: Icons.account_circle,
-                  onchanged: (value) => checkitem(value),
-                ),
-                  trailing: GtIcon(
-                  icondata: Icons.arrow_forward_ios_rounded,
-              ),
-             )
-           ],
-          ),
-         ));
-       }
-
-         void checkitem(value) {
-          isSelected = value;
-      }
-     }
-    }
-  ```          
+      class CustomerList extends StatelessWidget {
+            bool isSelected = false;
+          @override
+                Widget build(BuildContext context) {
+                   return Container(
+                        child: ListTile(
+                        title: GtText(
+                          text: 'Paul Walker',
+                          texttype: TextformatType.listitemkey,
+                          textOverflow: TextOverflow.ellipsis,
+                        ),
+                        subtitle:
+                            GtText(text: "USA", texttype: TextformatType.listitem),
+                        leading: GtIconCheckbox(
+                          icon: Icons.account_circle,
+                          selected: isSelected,
+                          onchanged: (value) => checkitem(value),
+                        ),
+                        trailing: GtIcon(
+                          icondata: Icons.arrow_forward_ios_rounded,
+                        ),
+                      ));
+                    }
+               void checkitem(value) {
+                   isSelected = value;
+                }}
+                    
+              
+   ```          
    
    - Step 3 : Result :
-      ![image](https://user-images.githubusercontent.com/64594463/103772299-4e3a1580-504f-11eb-940d-2e116862f956.png)
+      
+        ![image](https://user-images.githubusercontent.com/64594463/103772299-4e3a1580-504f-11eb-940d-2e116862f956.png)
    
    
    
@@ -255,7 +252,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                 );
             }
          }
-      ```
+     ```
      
       - Step 3 : Result :
       
