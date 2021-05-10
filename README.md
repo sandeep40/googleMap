@@ -160,7 +160,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
    ```dart
       class CustomerList extends StatelessWidget {
             bool isSelected = false;
-          @override
+            @override
                 Widget build(BuildContext context) {
                    return Scaffold(
                         body: Container(
