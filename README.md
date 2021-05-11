@@ -395,7 +395,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 1 : Import core in files that it will be used:
 
       ```dart
-         import 'package:core/core.dart';
+         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
       ```
 
       - Step 2 : Used GtTitlebar widget and specify the color for the text which is to be displayed.
@@ -404,12 +404,10 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
              class WelcomePage extends StatelessWidget {
                 @override
                Widget build(BuildContext context) {
-               return Container(
-               child:  GtTitlebar(
-                           title: "Details",
-                           fontsize: 20,
-                           textcolor: context.theme.primaryColor,
-                         ),
+                 return Scaffold(
+                   appBar:  AppBar(
+                     title:Text('TITLE'),
+                   ),
                );
             }
          }
