@@ -75,13 +75,13 @@
                      appBar: GtAppBar(
                          backgroundColor: Color(0xff5a5278),
                          title: GtText(text: 'Customers')),
-                     body: Container(
-                       child: GtText(
-                         text: 'HR',
-                         textStyle: TextStyle(fontSize: 20, color: Colors.grey),
-                         iconData: Icons.people_alt_outlined,
-                         position: GtPosition.PREFIX,
-                       ),
+                         body: Container(
+                          child: GtText(
+                           text: 'HR',
+                           textStyle: TextStyle(fontSize: 20, color: Colors.grey),
+                           iconData: Icons.people_alt_outlined,
+                           position: GtPosition.PREFIX,
+                        ),
                      ));
                }
             }
