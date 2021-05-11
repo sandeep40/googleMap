@@ -305,10 +305,10 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                 
       ```dart
              class WelcomePage extends StatelessWidget {
-                @override
+               @override
                Widget build(BuildContext context) {
                return Scaffold(
-               body: GTChip(
+                 body: GTChip(
                     label: 'Chip Demo',
                     ),
                );
