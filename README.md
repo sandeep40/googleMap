@@ -307,14 +307,14 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
              class WelcomePage extends StatelessWidget {
                 @override
                Widget build(BuildContext context) {
-               return Container(
-               child: GTChip(
+               return Scaffold(
+               body: GTChip(
                     label: 'Chip Demo',
-                    textFormatType: TextformatType.bodytext),
+                    ),
                );
             }
          }
-     ```
+      ```
      
       - Step 3 : Result :
       
