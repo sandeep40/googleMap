@@ -238,15 +238,15 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       ```dart
              class WelcomePage extends StatelessWidget {
              final TextEditingController usernameTextController = TextEditingController();
-                @override
+               @override
                Widget build(BuildContext context) {
-               return Container(
-                  child: GtTextFormField(
-                      fieldLabel: 'Username'.tr,
-                      textEditingController: usernameTextController,
-                      padding: EdgeInsets.only(left: 8.0, right: 8.0),
-                      isRequired: true,
-                      isReadOnly: true,
+               return Scaffold(
+                      body: TextFormField(
+                         decoration: InputDecoration(
+                         hintText: "Username",
+                         contentPadding: EdgeInsets.only(left: 8.0, right: 8.0),
+                         )
+                      maxLength: 100,
                    )
                 );
             }
