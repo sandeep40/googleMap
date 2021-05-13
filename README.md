@@ -540,36 +540,43 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtNavigationRails widget.
                 
       ```dart
-       class WelcomePage extends StatelessWidget {
+       class MyApp extends StatelessWidget {
           @override
          Widget build(BuildContext context) {
-           var nrdrails = [
-                 Rails(Icons.folder_open, Icons.folder, "Document",
-                     "/documents/"), // Roles
-                 Rails(Icons.calendar_today_outlined, Icons.today, "Tasks",
-                     "/tasks/"),
-                  Rails(Icons.settings, Icons.settings, "Settings", "/settings/"),];
-                   return Container(
-                     child:  GtNavigationRails(
-                     nrdlist: nrdrails,
-                     selectedindex: 1,
-                     isShowLable: true,
-                     trailingWidget: [
-                       IconButton(
-                         icon: Icon(
-                          Icons.logout,
-                          color: context.theme.iconTheme.color.withOpacity(0.64),
-                         ),
-                       ),
-                      Text('Log Out',
-                        style: TextStyle(
-                           color: Color(0xdd000000).withOpacity(0.64),
-                           fontSize: context.theme.textTheme.bodyText1.fontSize,
-                           fontFamily: AppTheme.defaultFontFamily))
-                 ],
-               )
-           );
-        }
+            return MaterialApp(
+               home: HomePage(),
+            );
+         }
+       }
+       class HomePage extends StatefullWidget{
+          @override
+          _HomePageState createState() => _HomePageState();
+       }
+       class _HomePageState extends State<HomePage>{
+         var nar = [
+               Rails(Icons.folder_open, Icons.folder, "Documents", "/documents/"),
+               Rails(Icons.calendar_today_outlined, Icons.today, "Tasks", "/tasks/"),
+               Rails(Icons.settings, Icons.settings, "Settings", "/settings/"),
+               Rails(Icons.apps_outlined, Icons.apps_outlined, "App Store", "/app store/")
+               ];
+         @override
+         Widget build(BuildContext context) {
+           return Scaffold(
+            body: GtNavigationRails(
+             nrdlist: nar,
+             selectedindex: 1,
+             isShowLable: true,
+             trailingWidget: [
+               IconButton(icon: Icon(Icons.logout)),
+                Text(
+                   "Logout",
+                   style: TextStyle(
+                    fontSize: 18.0, color: Color(0xdd000000).withOpacity(0.64)),
+                  )
+               ],
+              ),
+            );
+       }           
       } 
 
       
