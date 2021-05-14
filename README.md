@@ -727,7 +727,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                        ),  
                   );
               }
-          }
+         }
      ```
      
       - Step 3 : Result :
@@ -855,78 +855,79 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                           isCardTitle: true,
                           type: GtFieldType.STRING,
                           webTextFormatType: TextformatType.headline6,
-                        ),
-                        'Name': GtTileField(
-                          valuePath: 'Customer/Name', // If return single object Customer take value of the object like this Customer/Name
-                          row: 2,
-                          mobileRow: 2,
-                          mobileFlex: 2,
-                          cardRow: 1,
-                          isCardSubTitle: true,
-                          type: GtFieldType.STRING,
-                          webTextFormatType: TextformatType.bodyText1,
-                        ),
-                        "Status": GtTileField(
+                          ),
+                           'Name': GtTileField(
+                            valuePath: 'Customer/Name', // If return single object Customer take value of the object like this Customer/Name
+                            row: 2,
+                            mobileRow: 2,
+                            mobileFlex: 2,
+                            cardRow: 1,
+                            isCardSubTitle: true,
+                            type: GtFieldType.STRING,
+                            webTextFormatType: TextformatType.bodyText1,
+                            ),
+                           "Status": GtTileField(
                                     valuePath: "DeliveryStatus",
                                     bannerItems: {'Delivered': 'Delivered', 'NotDelivered': 'NotDelivered', 'PartiallyDelivered' : 'PartiallyDelivered'},
                                     isBannerField: true,
-                                  ),
-                        "StatusFilter": GtTileField(
+                                   ),
+                           "StatusFilter": GtTileField(
                                     valuePath: "Status",
                                     type: GtFieldType.FILTER,
                                     filterType: GtFilterType.RADIO_BUTTON_FILTER,
                                     filterItems: {'All': null, 'Delivered': "Delivered", 'NotDelivered': "NotDelivered","PartiallyDelivered":"PartiallyDelivered"},
                                     filterValue: 'deliveryStatus',
                                     filterLabel: 'Status',
-                                  ),
-                        "SortFilter": GtTileField(
-                            filterLabel: "Sort By Field",
-                            type: GtFieldType.FILTER,
-                            filterType: GtFilterType.SORT_FILTER,
-                            filterItems: {
-                              'DocumentNo': 'DocumentNo', 
-                            },
-                            filterValue: 'sortField'
-                        ),
-                      },
-                      viewType: ViewType.both,
-                      enablefilter: true,
-                    ),
-                 binding: [
-                         CoreBinding(
-                             entityGQL: CustomerOrdersGQL.ORDER_GQL_QUERY, // Pass your GQL
-                             isList: true,
-                             nodeName: "demo",
-                             tag: "demo",
-                             enableDefaultHeader: true,),
-                       ]
-                 )
+                                    ),
+                             "SortFilter": GtTileField(
+                               filterLabel: "Sort By Field",
+                               type: GtFieldType.FILTER,
+                               filterType: GtFilterType.SORT_FILTER,
+                               filterItems: {
+                                 'DocumentNo': 'DocumentNo', 
+                                },
+                               filterValue: 'sortField'
+                               ),
+                             },
+                            viewType: ViewType.both,
+                            enablefilter: true,
+                            ),
+                        binding: [
+                            CoreBinding(
+                               entityGQL: CustomerOrdersGQL.ORDER_GQL_QUERY, // Pass your GQL
+                               isList: true,
+                               nodeName: "demo",
+                               tag: "demo",
+                               enableDefaultHeader: true,),
+                               ]
+                             )
 
              class CustomerOrdersGQL {
-               static const ORDER_GQL_QUERY = '''
-                     query(
+                 static const ORDER_GQL_QUERY = '''
+                      query(
                        \$limit: Int
                        \$offset: Int
                        \$sort: sortEnumType
                        \$sortField: String
                        \$deliveryStatus: OrderDeliveryStatusEnumType
-                     ) {
-                       orders: orders(
-                         limit: \$limit
-                         offset: \$offset
-                         sort: \$sort
-                         sortField: \$sortField
-                         deliveryStatus: \$deliveryStatus
-                       ) {
-                         DocumentNo
-                         DeliveryStatus
-                         Customer {
-                           Name
-                         }
-                       }
-                     }
-                   ''';
-     }
+                        ) {
+                          orders: orders(
+                            limit: \$limit
+                            offset: \$offset
+                            sort: \$sort
+                            sortField: \$sortField
+                            deliveryStatus: \$deliveryStatus
+                            )
+                            {
+                              DocumentNo
+                              DeliveryStatus
+                              Customer {
+                               Name
+                              }
+                          }
+                        }
+                  ''';
+            }
      ```
      
       - Step 3 : Result :
@@ -981,23 +982,23 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       ```dart
              class Menu extends StatelessWidget {
              @override
-            Widget build(BuildContext context) {
-               return Scaffold(
-                  appBar: GtAppBar(
-                     backgroundColor: Color(0xff5a5278),
-                     title: GtUserMenuBar(
-                     userName: "Sara",
-                        userNameTextStyle: TextStyle(
-                     color: Color.fromRGBO(152, 156, 173, 1),
-                  fontWeight: FontWeight.bold),
-                  iconWidgets: [
-                  IconButton(
-                  icon: Icon(Icons.notifications_rounded), onPressed: () => {})
-                  ],
-             ),
-          ),
+              Widget build(BuildContext context) {
+                return Scaffold(
+                   appBar: GtAppBar(
+                      backgroundColor: Color(0xff5a5278),
+                      title: GtUserMenuBar(
+                      userName: "Sara",
+                      userNameTextStyle: TextStyle(
+                      color: Color.fromRGBO(152, 156, 173, 1),
+                      fontWeight: FontWeight.bold),
+                       iconWidgets: [
+                         IconButton(
+                          icon: Icon(Icons.notifications_rounded), onPressed: () => {})
+                      ],
+                    ),
+                  ),
                   body: Container()
-         );
+              );
             }
            }
      ```
