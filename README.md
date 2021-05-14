@@ -902,32 +902,32 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                                ]
                              )
 
-             class CustomerOrdersGQL {
-                 static const ORDER_GQL_QUERY = '''
-                      query(
-                       \$limit: Int
-                       \$offset: Int
-                       \$sort: sortEnumType
-                       \$sortField: String
-                       \$deliveryStatus: OrderDeliveryStatusEnumType
-                        ) {
-                          orders: orders(
-                            limit: \$limit
-                            offset: \$offset
-                            sort: \$sort
-                            sortField: \$sortField
-                            deliveryStatus: \$deliveryStatus
-                            )
-                            {
-                              DocumentNo
-                              DeliveryStatus
-                              Customer {
-                               Name
-                              }
-                          }
-                        }
-                  ''';
-            }
+                          class CustomerOrdersGQL {
+                             static const ORDER_GQL_QUERY = '''
+                                 query(
+                                    \$limit: Int
+                                    \$offset: Int
+                                    \$sort: sortEnumType
+                                    \$sortField: String
+                                    \$deliveryStatus: OrderDeliveryStatusEnumType
+                                    ) {
+                                        orders: orders(
+                                           limit: \$limit
+                                           offset: \$offset
+                                           sort: \$sort
+                                           sortField: \$sortField
+                                           deliveryStatus: \$deliveryStatus
+                                           )
+                                            {
+                                               DocumentNo
+                                               DeliveryStatus
+                                               Customer {
+                                                   Name
+                                                }
+                                            }
+                                       }
+                               ''';
+                         }
      ```
      
       - Step 3 : Result :
