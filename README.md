@@ -694,7 +694,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 1 : Import core in files that it will be used:
 
       ```dart
-         import 'package:core/core.dart';
+         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
       ```
 
       - Step 2 : Used GtAppBar widget.
@@ -704,11 +704,11 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
              final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
              final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
                 @override
-               Widget build(BuildContext context) {
-               return Scaffold(
+                Widget build(BuildContext context) {
+                   return Scaffold(
                       backgroundColor: context.theme.backgroundColor,
                       appBar: GtAppBar(
-                        title: const Text('AppBar Demo'),
+                        title: const Text('AppBar'),
                         actions: <Widget>[
                           IconButton(
                             icon: const Icon(Icons.add_alert),
@@ -725,9 +725,9 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                            style: TextStyle(fontSize: 24),
                          ),
                        ),  
-                );
-            }
-         }
+                  );
+              }
+          }
      ```
      
       - Step 3 : Result :
