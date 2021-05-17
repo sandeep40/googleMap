@@ -1213,13 +1213,12 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtComingSoon widget as shown below example.
                 
       ```dart
-            class Dashboard extends StatelessWidget {
+            class ComingSoon extends StatelessWidget {
             @override
             Widget build(BuildContext context) {
               return Scaffold(
                   appBar: GtAppBar(
-                      backgroundColor: Color(0xff5a5278),
-                      title: GtText(text: ' Dashboard')),
+                      title: GtText(text: 'ComingSoon')),
                   body: Container(
                     child: GtComingSoon(),
                   ));
