@@ -343,7 +343,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 1 : Import core in files that it will be used:
 
       ```dart
-         import 'package:core/core.dart';
+         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
       ```
 
       - Step 2 : Used GtHeader widget input is List of Widgets and Bool.
@@ -352,14 +352,25 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
              class WelcomePage extends StatelessWidget {
                 @override
                Widget build(BuildContext context) {
-               return Container(
-               child: GtHeaderWidget(
-                         listItemsheader: [
-                           GtText(text: "Header 1",),
-                           GtText(text: "Header 2")
-                         ],
-                         enableCheckbox: true,
-                   )
+               return MaterialApp(
+               home: Scaffold(
+                  body: ListVuew(
+                     chilren: [
+                        Title(
+                           color: Colors.cyan,
+                           child: Row(
+                              children: <Widget>[
+                                 Checkbox(
+                                    value: false,
+                                 ),
+                                 Text("Header 1"),
+                                 Text("Header 2")
+                              ]
+                           )
+                        )
+                      ]
+                    )    
+                 )
                );
             }
          }
