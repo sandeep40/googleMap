@@ -200,7 +200,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
    
 # GtTextFormField Widget
   
- The gttextformfield widget is used represent the text form field on the Screen with responsive sizing handle by the core package.
+ The gttextformfield widget is used represent the text form field on the Screen with responsive sizing handle by the greytrix_ui_kit package.
    - Benefits of GtTextFormField Widget
       - Handles the font size of the text field in dynamic way based on the screen resolution.
       - GtTextFormField theme handles the ThemeData we don`t have to provide theme in GtTextFromField.
@@ -266,7 +266,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      
 # GTChip Widget
   
- The gtchip widget is used represent the text in chip on the Screen with responsive sizing handle by the core package.
+ The gtchip widget is used represent the text in chip on the Screen with responsive sizing handle by the greytrix_ui_kit package.
    - Benefits of GTChip Widget
       - Handles the font size of the text in dynamic way based on the screen resolution.
       - Following are the Textformattype supported for GtChip widget text :
@@ -327,7 +327,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      
 # GtHeader Widget
   
- The GtHeader widget is used represent the ListTile on the Screen with responsive sizing handle in the core package.
+ The GtHeader widget is used represent the ListTile on the Screen with responsive sizing handle in the greytrix_ui_kit package.
    - Benefits of GtHeader Widget
       - Handles the font size of the text in dynamic way based on the screen resolution.
     
@@ -354,7 +354,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                Widget build(BuildContext context) {
                return MaterialApp(
                home: Scaffold(
-                  body: ListVuew(
+                  body: ListView(
                      children: [
                         Title(
                            color: Colors.cyan,
@@ -363,8 +363,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                                  Checkbox(
                                     value: false,
                                  ),
-                                 Text("Header 1"),
-                                 Text("Header 2")
+                                 GtText(text: "Header 1"),
+                                 GtText(text: "Header 2")
                               ]
                            )
                         )
@@ -387,7 +387,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      
 # GtTitlebar Widget
   
- The gttitlebar widget is used represent the text on the Screen with responsive sizing handle in the core package.
+ The gttitlebar widget is used represent the text on the Screen with responsive sizing handle in the greytrix_ui_kit package.
    - Benefits of GtTitlebar Widget
       - Handles the font size of the text in dynamic way based on the screen resolution when specified along with fontSize.
       - Used the GtTitlebar along fontFamily property.
@@ -416,7 +416,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                 @override
                Widget build(BuildContext context) {
                  return Scaffold(
-                   appBar:  AppBar(
+                   appBar:  GtAppBar(
                      title:Text('TITLE'),
                    ),
                );
@@ -512,7 +512,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      
 # GtNavigationRails Widget
   
- The gtnavigationrails widget is used represent the NavigationRail on the Screen with responsive sizing handle in the core package.
+ The gtnavigationrails widget is used represent the NavigationRail on the Screen with responsive sizing handle in the greytrix_ui_kit package.
    - Benefits of GtNavigationRails Widget
       - Handles the font size of the text in dynamic way based on the screen resolution.
       - GtNavigationRails widget theme handles by ThemeData. 
@@ -682,7 +682,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      
 # GtAppBar Widget
   
- The gtappbar widget is used represent the App Bar on the Screen with responsive sizing handle by the core package.
+ The gtappbar widget is used represent the App Bar on the Screen with responsive sizing handle by the greytrix_ui_kit package.
    - Benefits of GtAppBar Widget
       - Handles the font size of the text field in dynamic way based on the screen resolution.
       - GtAppBar theme handles the ThemeData we don`t have to provide theme in GtAppBar.
