@@ -1161,9 +1161,9 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtBottomBar widget as shown below example.
                 
       ```dart
-             class BottomMenubar extends StatelessWidget {
-         @override
-         Widget build(BuildContext context) {
+        class BottomMenubar extends StatelessWidget {
+          @override
+          Widget build(BuildContext context) {
            return Scaffold(
               appBar: AppBar(
                 title: Text("Bottom Navigation"),
