@@ -1424,26 +1424,32 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtCard widget as shown below example.
                 
       ```dart
-             class CardDemo extends StatelessWidget {
-                  @override
-                  Widget build(BuildContext context) {
-                    return Scaffold(
-                        appBar: GtAppBar(
-                            backgroundColor: Color(0xff5a5278),
-                            title: GtText(text: 'Card Demo')),
-                        body: Container(
-                            child: GtCard(
-                          cardheight: 150,
-                          cardwidth: 150,
-                          boxFit: BoxFit.fill,
-                          imageWidth: 90,
-                          imageheight: 100,
-                          label: 'Product',
-                        )));
+                 class WelcomePage extends StatelessWidget {
+                   @override
+                   Widget build(BuildContext context) {
+                        return Scaffold(
+                             appBar: GtAppBar(
+                                title: GtText(
+                                   text: "Card Demo",
+                                 ),
+                              ),
+                              body: Container(
+                                child: GtCard(
+                                 elevation: 0,
+                                 cardheight: 180,
+                                 cardwidth: 180,
+                                 boxFit: BoxFit.fill,
+                                 imageURL:
+                                     "https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg",
+                                 isNetworkImage: true,
+                                 imageWidth: 150,
+                                 imageheight: 150,
+                              ),
+                           ),
+                        );
                   }
-               }
-
-     ```
+             }
+    ```
      
       - Step 3 : Result :
                 
