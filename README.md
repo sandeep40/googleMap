@@ -355,7 +355,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                return MaterialApp(
                home: Scaffold(
                   body: ListVuew(
-                     chilren: [
+                     children: [
                         Title(
                            color: Colors.cyan,
                            child: Row(
