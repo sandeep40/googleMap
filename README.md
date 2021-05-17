@@ -1165,28 +1165,25 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
          @override
          Widget build(BuildContext context) {
            return Scaffold(
+              appBar: AppBar(
+                title: Text("Bottom Navigation"),
+               ),
                bottomNavigationBar: GtBottomBar(
                  bottombarItems: [
-                   BottomNavigationBarItem(
-                       icon: Icon(Icons.home_filled), label: "Home"),
-                   BottomNavigationBarItem(icon: Icon(Icons.person), label: "Me"),
-                   BottomNavigationBarItem(
+                    BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+                    BottomNavigationBarItem(icon: Icon(Icons.person), label: "Me"),
+                    BottomNavigationBarItem(
                        icon: Icon(Icons.directions_walk_outlined), label: "Leave"),
-                   BottomNavigationBarItem(
-                     icon: Icon(Icons.calendar_today),
-                     label: "Calendar",
-                   ),
-                   BottomNavigationBarItem(
-                       icon: Icon(Icons.format_align_right_sharp), label: ""),
-                   //
-                 ],
-               ),
-               appBar: GtAppBar(
-                   backgroundColor: Color(0xff5a5278),
-                   title: GtText(text: 'Bottom Bar Demo')),
-               body: Container());
-         }
-      }
+                    BottomNavigationBarItem(
+                       icon: Icon(Icons.calendar_today), label: "Calendar"),
+                    BottomNavigationBarItem(
+                       icon: Icon(Icons.format_align_right_sharp), label: "Align")
+                      ],
+                  ),
+                 body: Container(),
+               );
+            }
+          }
 
      ```
      
