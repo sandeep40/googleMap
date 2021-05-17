@@ -719,7 +719,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                    return Scaffold(
                       backgroundColor: context.theme.backgroundColor,
                       appBar: GtAppBar(
-                        title: const Text('AppBar'),
+                        title: GtText(text: 'AppBar'),
                         actions: <Widget>[
                           IconButton(
                             icon: const Icon(Icons.add_alert),
