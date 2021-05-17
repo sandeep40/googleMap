@@ -1219,10 +1219,11 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
               return Scaffold(
                   appBar: GtAppBar(
                       title: GtText(text: 'ComingSoon')),
-                  body: Container(
-                    child: GtComingSoon(),
-                  ));
-            }
+                      body: Container(
+                        child: GtComingSoon(),
+                      )
+                 );
+             }
          }  
 
      ```
