@@ -1346,33 +1346,30 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtImageCard widget as shown below example.
                 
       ```dart
-             class BottomMenubar extends StatelessWidget {
-         @override
-         Widget build(BuildContext context) {
-           return Scaffold(
-               bottomNavigationBar: GtBottomBar(
-                 bottombarItems: [
-                   BottomNavigationBarItem(
-                       icon: Icon(Icons.home_filled), label: "Home"),
-                   BottomNavigationBarItem(icon: Icon(Icons.person), label: "Me"),
-                   BottomNavigationBarItem(
-                       icon: Icon(Icons.directions_walk_outlined), label: "Leave"),
-                   BottomNavigationBarItem(
-                     icon: Icon(Icons.calendar_today),
-                     label: "Calendar",
-                   ),
-                   BottomNavigationBarItem(
-                       icon: Icon(Icons.format_align_right_sharp), label: ""),
-                   //
-                 ],
-               ),
-               appBar: GtAppBar(
-                   backgroundColor: Color(0xff5a5278),
-                   title: GtText(text: 'Bottom Bar Demo')),
-               body: Container());
+            class WelcomePage extends StatelessWidget {
+                 @override
+                 Widget build(BuildContext context) {
+                     return Scaffold(
+                        appBar: GtAppBar(
+                          title: GtText(
+                            text: "ImageCard",
+                         ),
+                      ),
+                     body: Container(
+                       child: GtImageCard(
+                         backgroundcolor: Color(0xff5a5278),
+                         imageURL:
+                         "https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg",
+                         isNetworkImage: true,
+                         height: 150,
+                         width: 150,
+                         isSvgImage: false,
+                        ),
+                      ),
+                  );
+              }
          }
-      }
-
+             
      ```
      
       - Step 3 : Result :
