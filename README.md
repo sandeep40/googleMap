@@ -1166,7 +1166,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
           Widget build(BuildContext context) {
            return Scaffold(
               appBar: AppBar(
-                title: Text("Bottom Navigation"),
+                title: Text("Bottom Bar Demo"),
                ),
                bottomNavigationBar: GtBottomBar(
                  bottombarItems: [
