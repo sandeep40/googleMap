@@ -1574,15 +1574,16 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                   @override
                   Widget build(BuildContext context) {
                     return Scaffold(
-                        appBar: GtAppBar(
-                            backgroundColor: Color(0xff5a5278),
+                        appBar: GtAppBar(                   
                             title: GtText(text: 'Calendar Demo')),
                         body: Container(
                             child: GtCalendar(
                           firstDate: DateTime(1900),
-                          initialDate: DateTime.now(),
                           lastDate: DateTime(2100),
-                        )));
+                          initialDate: DateTime.now(),
+                          )
+                        )
+                     );
                   }
                }
 
