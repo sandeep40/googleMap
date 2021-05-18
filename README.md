@@ -1636,19 +1636,19 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                   Widget build(BuildContext context) {
                     return Scaffold(
                         appBar: GtAppBar(
-                            backgroundColor: Color(0xff5a5278),
-                            title: GtText(text: 'Calendar Demo')),
-                        body: Container(
-                          padding: EdgeInsets.all(10.0),
-                          child: GtCurrency(
-                            label: 'Balance',
-                            amount: '102,445.798',
-                            currency: '\$',
-                            horizontalView: true,
-                          ),
-                        ));
-                     }
-               }
+                            title: GtText(text: 'Currency Demo')),
+                            body: Container(
+                              padding: EdgeInsets.all(10.0),
+                                child: GtCurrency(
+                                   label: 'Balance',
+                                   amount: '102,445.765',
+                                   currency: '\$',
+                                   horizontalView: true,
+                                  ),
+                               )
+                           );
+                       }
+                }
 
      ```
      
