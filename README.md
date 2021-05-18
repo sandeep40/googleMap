@@ -1515,14 +1515,14 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                             backgroundColor: Color(0xff5a5278),
                             title: GtText(text: 'Date Demo')),
                         body: Container(
-                          child: GtDate(
-                            initialDate: DateTime.now(),
-                            type: GtDateTimeType.DATE,
-                            datePickerEntryMode: DatePickerEntryMode.calendar,
-                            firstDate: DateTime(1990),
-                            lastDate: DateTime(2100),
+                           child: GtDate(
+                             datePickerEntryMode: DatePickerEntryMode.calendar,
+                             firstDate: DateTime(1990),
+                             lastDate: DateTime(2100),
+                             initialDate: DateTime.now(),
+                            ),
                           ),
-                        ));
+                        );
                      }
                }
 
