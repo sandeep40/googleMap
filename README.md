@@ -1255,10 +1255,11 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                   appBar: GtAppBar(
                       backgroundColor: Color(0xff5a5278),
                       title: GtText(text: 'Dashboard')),
-                  body: Container(
-                    child: GtPageNotFound(),
-                  ));
-            }
+                          body: Container(
+                             child: GtPageNotFound(),
+                          )
+                    );
+               }
          }
 
      ```
