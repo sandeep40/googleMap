@@ -1868,7 +1868,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 1 : Import UI kit in files that it will be used:
 
       ```dart
-         import 'gt_icon.dart';
+         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
       ```
 
       - Step 2 : Used GtAppSideBar widget as shown below example.
@@ -1954,7 +1954,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 1 : Import UI kit in files that it will be used:
 
       ```dart
-         import 'gt_list_tile.dart';
+         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
       ```
 
       - Step 2 : Used GtDynamicView widget as shown below example.
