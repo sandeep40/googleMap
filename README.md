@@ -1732,18 +1732,19 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                   @override
                   Widget build(BuildContext context) {
                     return Scaffold(
-                        appBar: GtAppBar(
-                            backgroundColor: Color(0xff5a5278),
+                        appBar: GtAppBar
                             title: GtText(text: 'Button Demo')),
-                        body: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child: GtButton(
-                              icondata: Icons.ac_unit,
-                              text: 'Click Me',
-                              iconPosition: GtPosition.PREFIX,
-                            )));
-                  }
-            }
+                            body: Container(
+                               padding: EdgeInsets.all(10.0),
+                                 child: GtButton(
+                                    icondata: Icons.ac_unit,
+                                    text: 'Click Me',
+                                    iconPosition: GtPosition.PREFIX,
+                                   )
+                                )
+                            );
+                     }
+                }
 
             Radio  Button    
 
@@ -1753,18 +1754,19 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                   Widget build(BuildContext context) {
                     return Scaffold(
                         appBar: GtAppBar(
-                            backgroundColor: Color(0xff5a5278),
-                            title: GtText(text: 'Button Demo')),
-                        body: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child: GtButton(
-                              buttonType: GtButtonType.RADIO,
-                              groupValue: SingingCharacter.lafayette,
-                              value: SingingCharacter.lafayette,
-                              title: GtText(text: 'lafayette'),
-                              selected: true,
-                              text: 'lafayette',
-                            )));
+                              title: GtText(text: 'Button Demo')),
+                              body: Container(
+                                 padding: EdgeInsets.all(10.0),
+                                   child: GtButton(
+                                     buttonType: GtButtonType.RADIO,
+                                     groupValue: SingingCharacter.lafayette,
+                                     value: SingingCharacter.lafayette,
+                                     title: GtText(text: 'lafayette'),
+                                     selected: true,
+                                     text: 'lafayette',
+                             )
+                         )
+                     );
                   }
                }
 
@@ -1774,20 +1776,22 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                   @override
                   Widget build(BuildContext context) {
                     return Scaffold(
-                        appBar: GtAppBar(
-                            backgroundColor: Color(0xff5a5278),
-                            title: GtText(text: 'Button Demo')),
-                        body: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child: GtButton(
-                              buttonType: GtButtonType.IMAGE,
-                               imageheight: 70,
-                               imagewidth: 80,
-                              imageURL:
-                                  'https://homepages.cae.wisc.edu/~ece533/images/airplane.png',
-                              imageboxFit: BoxFit.fill,
-                              imageonClick: () => {print('clicked')},
-                            )));
+                         appBar: GtAppBar(
+                             backgroundColor: Color(0xff5a5278),
+                             title: GtText(text: 'Button Demo')),
+                                body: Container(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: GtButton(
+                                     buttonType: GtButtonType.IMAGE,
+                                     imageheight: 70,
+                                     imagewidth: 80,
+                                     imageURL:
+                                        'https://homepages.cae.wisc.edu/~ece533/images/airplane.png',
+                                       imageboxFit: BoxFit.fill,
+                                       imageonClick: () => {print('clicked')},
+                                    )
+                                 )
+                            );
                      }
                }
 
