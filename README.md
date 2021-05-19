@@ -1188,8 +1188,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      ```
      
       - Step 3 : Result :
-                
-           ![bottombar](https://user-images.githubusercontent.com/47977097/115863804-9ab92d80-a453-11eb-9a15-b6eb705e75f8.png)
+       ![SBottomNavigation](https://user-images.githubusercontent.com/82582302/118754973-a5fe4e00-b885-11eb-83f1-75fa17f642d2.png)  
+           
 
 
 
