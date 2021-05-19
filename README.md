@@ -115,7 +115,7 @@ The gticon widget is used represent the Icon on the Screen with responsive sizin
      ```
      - Step 2 : GtIcon widget can be used as shown in the below example where color and size are the optional Paramters if not specified the widget will handles it with its own creative way.
      ```dart
-        class WelcomePage extends StatelessWidget {
+        class IconDemo extends StatelessWidget {
           @override
           Widget build(BuildContext context) {
             return Container(
@@ -158,7 +158,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
    - Step 2 : GtIconCheckbox widget can be used as shown in the below example.
                 
    ```dart
-      class CustomerList extends StatelessWidget {
+      class CustomerListDemo extends StatelessWidget {
             bool isSelected = false;
             @override
                 Widget build(BuildContext context) {
@@ -236,7 +236,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtTextFormField widget with spacific fieldLabel name.
                 
       ```dart
-             class WelcomePage extends StatelessWidget {
+             class TextFormFieldDemo extends StatelessWidget {
              final TextEditingController usernameTextController = TextEditingController();
                @override
                Widget build(BuildContext context) {
@@ -304,7 +304,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GTChip widget and specify the textformattype for the text which is to be displayed.
                 
       ```dart
-             class WelcomePage extends StatelessWidget {
+             class ChipDemo extends StatelessWidget {
                @override
                Widget build(BuildContext context) {
                return Scaffold(
@@ -349,7 +349,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtHeader widget input is List of Widgets and Bool.
                 
       ```dart
-             class WelcomePage extends StatelessWidget {
+             class HeaderDemo extends StatelessWidget {
                 @override
                Widget build(BuildContext context) {
                return MaterialApp(
@@ -412,7 +412,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtTitlebar widget and specify the color for the text which is to be displayed.
                 
       ```dart
-             class WelcomePage extends StatelessWidget {
+             class TitleBarDemo extends StatelessWidget {
                 @override
                Widget build(BuildContext context) {
                  return Scaffold(
@@ -471,7 +471,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used CustomPopup widget.
                 
       ```dart
-             class WelcomePage extends StatelessWidget {
+             class CustomPopupDemo extends StatelessWidget {
                 @override
                Widget build(BuildContext context) {
                   var e = ["Popup 1" , "Popup 2", "Popup 3"];
@@ -551,7 +551,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtNavigationRails widget.
                 
       ```dart
-          class MyApp extends StatelessWidget {
+          class NavigationRailDemo extends StatelessWidget {
              @override
               Widget build(BuildContext context) {
                 return MaterialApp(
@@ -639,7 +639,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used SearchDialog widget.
                 
       ```dart
-             class WelcomePage extends StatelessWidget {
+             class SearchDialogDemo extends StatelessWidget {
            Rx<List<dynamic>> e =  new Rx<List<dynamic>>();
                 @override
                Widget build(BuildContext context) {
@@ -711,7 +711,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtAppBar widget.
                 
       ```dart
-             class WelcomePage extends StatelessWidget {
+             class AppBarDemo extends StatelessWidget {
              final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
              final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
                 @override
@@ -991,7 +991,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtUserMenuBar widget and specify the color for the text which is to be displayed.
                 
       ```dart
-             class Menu extends StatelessWidget {
+             class UserMenuBarDemo extends StatelessWidget {
              @override
               Widget build(BuildContext context) {
                 return Scaffold(
@@ -1059,7 +1059,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtTab widget as shown below example.
                 
       ```dart
-             class Tab extends StatelessWidget {
+             class TabDemo extends StatelessWidget {
                int selectedTab = 0;
                final PageController pageController = new PageController();
 
@@ -1161,7 +1161,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtBottomBar widget as shown below example.
                 
       ```dart
-        class BottomMenubar extends StatelessWidget {
+        class BottomMenubarDemo extends StatelessWidget {
           @override
           Widget build(BuildContext context) {
            return Scaffold(
@@ -1210,7 +1210,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtComingSoon widget as shown below example.
                 
       ```dart
-            class ComingSoon extends StatelessWidget {
+            class ComingSoonDemo extends StatelessWidget {
             @override
             Widget build(BuildContext context) {
               return Scaffold(
@@ -1248,7 +1248,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtPageNotFound widget as shown below example.
                 
       ```dart
-            class Dashboard extends StatelessWidget {
+            class PageNotFoundDemo extends StatelessWidget {
             @override
             Widget build(BuildContext context) {
               return Scaffold(
@@ -1289,7 +1289,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtNoListFound widget as shown below example.
                 
       ```dart
-            class ListPage extends StatelessWidget {
+            class ListPageDemo extends StatelessWidget {
             @override
             Widget build(BuildContext context) {
               return Scaffold(
@@ -1347,7 +1347,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtImageCard widget as shown below example.
                 
       ```dart
-            class WelcomePage extends StatelessWidget {
+            class ImageCardDemo extends StatelessWidget {
                  @override
                  Widget build(BuildContext context) {
                      return Scaffold(
@@ -1425,7 +1425,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtCard widget as shown below example.
                 
       ```dart
-                 class WelcomePage extends StatelessWidget {
+                 class CardDemo extends StatelessWidget {
                    @override
                    Widget build(BuildContext context) {
                         return Scaffold(
@@ -1877,7 +1877,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       ```dart         
           
 
-      class WelcomePage extends StatelessWidget {
+      class AppSideBarDemo extends StatelessWidget {
          @override
          Widget build(BuildContext context) {
            var nrdrails = [
@@ -1961,7 +1961,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtDynamicView widget as shown below example.
                 
       ```dart   
-        class WelcomePage extends StatelessWidget {
+        class DynamicViewDemo extends StatelessWidget {
           @override
          Widget build(BuildContext context) {
            var nrdrails = [
