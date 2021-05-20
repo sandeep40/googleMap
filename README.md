@@ -1878,37 +1878,72 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       ```dart         
           
 
-      class AppSideBarDemo extends StatelessWidget {
-         @override
-         Widget build(BuildContext context) {
-           var nrdrails = [
-                 Rails(Icons.folder_open, Icons.folder, "Document",
-                     "/documents/"), // Roles
-                 Rails(Icons.calendar_today_outlined, Icons.today, "Tasks",
-                     "/tasks/"),
-                 Rails(Icons.settings, Icons.settings, "Settings", "/settings/"),];
-                  return Container(
-                    child:  GtNavigationRails(
-                     nrdlist: nrdrails,
-                     selectedindex: 1,
-                     isShowLable: true,
-                     trailingWidget: [
-                      IconButton(
-                        icon: Icon(
-                         Icons.logout,
-                         color: context.theme.iconTheme.color.withOpacity(0.64),
-                       ),
-                     ),
-                     Text('Log Out',
-                        style: TextStyle(
-                            color: Color(0xdd000000).withOpacity(0.64),
-                            fontSize: context.theme.textTheme.bodyText1.fontSize,
-                            fontFamily: AppTheme.defaultFontFamily))
-                   ],
-                )
-            );
-          }
-       }
+      
+             class Home extends StatelessWidget {
+                  @override
+                  Widget build(BuildContext context) {
+                     return Scaffold(
+                        appBar: GtAppBar(
+                           title: GtText(
+                             text: 'AppBar',
+                            )
+                      ),
+                      drawer: Drawer(
+                        child: GtAppSideBar(
+                          isItemSelected: (obj) {},
+                          getAvatarWidgetContent: (obj) {},
+                          toolTipMessageField: (obj) {},
+                          listApps: [],
+                          trailingWidget: [
+                            Container(
+                               child: Column(
+                                 children: <Widget>[
+                                     Container(
+                                       width: double.infinity,
+                                       padding: EdgeInsets.all(20),
+                                       color: Theme.of(context).primaryColor,
+                                       child: Center(
+                                           child: Column(children: <Widget>[
+                                              Container(
+                                                 width: 100,
+                                                 height: 100,
+                                                 decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                   image: DecorationImage(
+                                                     image: AssetImage('assets/images/profile.jpg'),
+                                                     fit: BoxFit.fill)),
+                                                    ),
+                                                    Text(
+                                                      'Greytrix',
+                                                      style: TextStyle(fontSize: 20),
+                                                      ),
+                                                      GtText(text: 'greytrixindia@gmail.com')
+                                                  ]
+                                             ),
+                                         ),
+                                     ),
+                                     ListTile(
+                                        leading: Icon(Icons.file_present),
+                                          title: Text('My File'),
+                                     ),
+                                     ListTile(
+                                        leading: Icon(Icons.people),
+                                        title: GtText(text: 'Shared with me'),
+                                     ),
+                                     ListTile(
+                                        leading: Icon(Icons.star),
+                                        title: GtText(text: 'Starred')
+                                       ),                       
+                                    ],
+                                 ),
+                               ),
+                             ]
+                          ),
+                        )
+                     );    
+                 }
+            }
+
        ```
      
       - Step 3 : Result :
