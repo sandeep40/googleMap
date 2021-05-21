@@ -1948,7 +1948,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      
       - Step 3 : Result :
        
-        
+        ![AppSideBar1](https://user-images.githubusercontent.com/82582302/119087908-75551a80-ba25-11eb-9efb-85c352f11e50.png)
 
 
 
@@ -1976,7 +1976,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                this.headertextStyle
             });
   
-   - Input Parameters of GtAppSideBar Widget 
+   - Input Parameters of GtDynamicView Widget 
       - rowsCont - int - it's called to obtain the number of rows to tell the user are available
       - toMapjson - Map<String, dynamic>- A Map object is a key-value pair to store string or any dynamic data.
       - listItem - dynamic - To set the value for the 
