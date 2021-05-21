@@ -1948,7 +1948,6 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      
       - Step 3 : Result :
        
-        ![AppSideBar1](https://user-images.githubusercontent.com/82582302/119088780-cca7ba80-ba26-11eb-800d-2e0bfba68d93.png)
         ![AppSideBar](https://user-images.githubusercontent.com/82582302/119087922-78e8a180-ba25-11eb-88a9-5edc66af81c8.png)
 
 
