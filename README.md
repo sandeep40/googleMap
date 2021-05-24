@@ -2025,9 +2025,10 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                      }
             }
 
-       
-       ``` 
+      ```
+     
       - Step 3 : Result :
+
       ![DynamicView](https://user-images.githubusercontent.com/82582302/119325825-e81cfa80-bc9e-11eb-93b2-bdf9a046804f.png)
 
        
