@@ -1263,11 +1263,11 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                }
          }
 
-     ```
+      ```
      
       - Step 3 : Result :      
 
-               ![PageNotFound](https://user-images.githubusercontent.com/47977097/115863634-5f1e6380-a453-11eb-83d7-1579f23c8877.png)
+      ![PageNotFound](https://user-images.githubusercontent.com/47977097/115863634-5f1e6380-a453-11eb-83d7-1579f23c8877.png)
   
 
 
