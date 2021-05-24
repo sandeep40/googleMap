@@ -1998,39 +1998,36 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - Step 2 : Used GtDynamicView widget as shown below example.
                 
       ```dart   
-        class DynamicViewDemo extends StatelessWidget {
-          @override
-         Widget build(BuildContext context) {
-           var nrdrails = [
-                 Rails(Icons.folder_open, Icons.folder, "Document",
-                     "/documents/"), // Roles
-                 Rails(Icons.calendar_today_outlined, Icons.today, "Tasks",
-                     "/tasks/"),
-                 Rails(Icons.settings, Icons.settings, "Settings", "/settings/"),];
-                  return Container(
-                    child:  GtNavigationRails(
-                      nrdlist: nrdrails,
-                      selectedindex: 1,
-                      isShowLable: true,
-                      trailingWidget: [
-                        IconButton(
-                          icon: Icon(
-                            Icons.logout,
-                            color: context.theme.iconTheme.color.withOpacity(0.64),
-                         ),
-                       ),
-                       Text('Log Out',
-                         style: TextStyle(
-                             color: Color(0xdd000000).withOpacity(0.64),
-                             fontSize: context.theme.textTheme.bodyText1.fontSize,
-                             fontFamily: AppTheme.defaultFontFamily))
-                   ],
-                )
-            );
-         }
-       }
-     
+        
+           class DynamicViewDemo extends StatefulWidget {
+                @override
+                _DynamicViewDemoState createState() => _DynamicViewDemoState();
+               }
+
+               class _DynamicViewDemoState extends State<DynamicViewDemo> {
+                    @override
+                    Widget build(BuildContext context) {
+                         return Scaffold(
+                             appBar: AppBar(
+                                title: GtText(
+                                   text: 'Dynamic View',
+                                   ),
+                              ),
+                              body: GtDynamicView(
+                                  title: 'Note Title',
+                                  titleTextStyle: TextStyle(fontWeight: FontWeight.bold),
+                                  listItems: (true),
+                                  toMapjson: {},
+                                  rowsCount: 1,
+                                  backgroundColor: Colors.grey,
+                                  ),
+                           );
+                     }
+            }
+
        
        ``` 
       - Step 3 : Result :
+      ![DynamicView](https://user-images.githubusercontent.com/82582302/119325825-e81cfa80-bc9e-11eb-93b2-bdf9a046804f.png)
+
        
