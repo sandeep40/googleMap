@@ -2012,7 +2012,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       ```dart   
         
           class Dynamic extends StatelessWidget {
-            final country = ['Delhi', 'Pune', 'Gujraat', 'Mumbai', 'Thane'];
+            final city = ['Delhi', 'Pune', 'Gujraat', 'Mumbai', 'Thane'];
             @override
             Widget build(BuildContext context) {
                 return MaterialApp(
@@ -2024,7 +2024,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                           itemBuilder: (context, index) {
                               return GtDynamicView(
                                 listItems: true,
-                                title: (country[index]),
+                                title: (city[index]),
                                 toMapjson: {},
                                 );
                               },
