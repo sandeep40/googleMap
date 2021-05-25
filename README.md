@@ -1917,19 +1917,43 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                                                   ]
                                              ),
                                          ),
-                                     ),
-                                     ListTile(
+                                       ),
+                                       ListTile(
                                         leading: Icon(Icons.file_present),
-                                          title: Text('My File'),
-                                     ),
-                                     ListTile(
+                                        title: Text('My File'),
+                                       ),
+                                       ListTile(
                                         leading: Icon(Icons.people),
                                         title: GtText(text: 'Shared with me'),
-                                     ),
-                                     ListTile(
+                                       ),
+                                       ListTile(
                                         leading: Icon(Icons.star),
                                         title: GtText(text: 'Starred')
-                                       ),                       
+                                       ), 
+                                       ListTile(
+                                        leading: Icon(Icons.credit_card_rounded),
+                                        title: GtText(text: 'Recent'),
+                                       ),
+                                       ListTile(
+                                        leading: Icon(Icons.offline_share),
+                                        title: GtText(text: 'Offline'),
+                                       ),
+                                       ListTile(
+                                        leading: Icon(Icons.upload_rounded),
+                                        title: GtText(text: 'Upload'),
+                                       ),
+                                       ListTile(
+                                        leading: Icon(Icons.cloud_download_outlined),
+                                        title: GtText(text: 'Backup'),
+                                       ),
+                                       ListTile(
+                                        leading: Icon(Icons.settings),
+                                        title: GtText(text: 'Setting'),                      
+                                       ),
+                                       ListTile(
+                                        leading: Icon(Icons.help),
+                                        title: GtText(text: 'Help'),
+                                       ),                      
                                     ],
                                  ),
                                ),
