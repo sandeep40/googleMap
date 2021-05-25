@@ -1945,15 +1945,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                                        ListTile(
                                         leading: Icon(Icons.cloud_download_outlined),
                                         title: GtText(text: 'Backup'),
-                                       ),
-                                       ListTile(
-                                        leading: Icon(Icons.settings),
-                                        title: GtText(text: 'Setting'),                      
-                                       ),
-                                       ListTile(
-                                        leading: Icon(Icons.help),
-                                        title: GtText(text: 'Help'),
-                                       ),                      
+                                       ),                                                     
                                     ],
                                  ),
                                ),
