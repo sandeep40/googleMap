@@ -2011,36 +2011,34 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                 
       ```dart   
         
-           class DynamicViewDemo extends StatefulWidget {
-                @override
-                _DynamicViewDemoState createState() => _DynamicViewDemoState();
-               }
-
-               class _DynamicViewDemoState extends State<DynamicViewDemo> {
-                    @override
-                    Widget build(BuildContext context) {
-                         return Scaffold(
-                             appBar: AppBar(
-                                title: GtText(
-                                   text: 'Dynamic View',
-                                   ),
-                              ),
-                              body: GtDynamicView(
-                                  title: 'Note Title',
-                                  titleTextStyle: TextStyle(fontWeight: FontWeight.bold),
-                                  listItems: (true),
-                                  toMapjson: {},
-                                  rowsCount: 1,
-                                  backgroundColor: Colors.grey,
-                                  ),
-                           );
-                     }
+          class Dynamic extends StatelessWidget {
+            final country = ['Delhi', 'Pune', 'Gujraat', 'Mumbai', 'Thane', 'Kharghar'];
+            @override
+            Widget build(BuildContext context) {
+                return MaterialApp(
+                   home: Scaffold(
+                     appBar: GtAppBar(
+                        title: GtText(text: 'Dynamic View'),
+                      ),
+                       body: ListView.builder(
+                          itemBuilder: (context, index) {
+                              return GtDynamicView(
+                                listItems: true,
+                                title: (country[index]),
+                                toMapjson: {},
+                                );
+                              },
+                           ),
+                       ),
+                   );
+                }
             }
+
 
       ```
      
       - Step 3 : Result :
 
-      ![DynamicView](https://user-images.githubusercontent.com/82582302/119325825-e81cfa80-bc9e-11eb-93b2-bdf9a046804f.png)
+      ![DynamicView](https://user-images.githubusercontent.com/82582302/119483390-8a59e280-bd72-11eb-8f7b-bb133db07a8e.png)
 
        
