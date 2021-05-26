@@ -1990,7 +1990,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
             });
   
    - Input Parameters of GtDynamicView Widget 
-      - rowsCont - int - To define the number of row.
+      - rowsCont - int - To set the number of row.
       - toMapjson - Map<String, dynamic>- A Map object is a key-value pair to store string or any dynamic data.
       - listItem - dynamic - To set the data in listItems.
       - gtTileRowCrossAxisAlignment - CrossAxisAlignment - To set ho items are align on the other axis
