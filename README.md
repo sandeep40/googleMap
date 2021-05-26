@@ -2011,34 +2011,121 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                 
       ```dart   
         
-          class Dynamic extends StatelessWidget {
-            final city = ['Delhi', 'Pune', 'Gujraat', 'Mumbai', 'Thane'];
-            @override
-            Widget build(BuildContext context) {
-                return MaterialApp(
-                   home: Scaffold(
-                     appBar: GtAppBar(
-                        title: GtText(text: 'Dynamic View'),
-                      ),
-                       body: ListView.builder(
-                          itemBuilder: (context, index) {
-                              return GtDynamicView(
-                                listItems: true,
-                                title: (city[index]),
-                                toMapjson: {},
-                                );
-                              },
-                           ),
-                       ),
-                   );
-                }
-            }
+         class DynamicViewDemo extends StatelessWidget {
+               @override
+               Widget build(BuildContext context) {
+                  return Scaffold(
+                      appBar: GtAppBar(
+                         title: GtText(
+                             text: 'Dynamic View',
+                            ),
+                         ),
+                         body: GtDynamicView(
+                         rowsCount: 11,
+                         title: 'PERSONAL DETAILS',
+                         toMapjson: {
+                            'Personal Email Id': GtTileField(
+                                 displayKey: true,
+                                 row: 1,
+                                 valuePath: 'email',
+                                 flex: 1,
+                                 mobileRow: 1,
+                             ),
+                            'Blood Group': GtTileField(
+                                displayKey: true,
+                                row: 1,
+                                valuePath: 'bloodgroup',
+                                flex: 1,
+                                mobileRow: 2,
+                             ),
+                            'Address1': GtTileField(
+                                displayKey: true,
+                                row: 2,
+                                valuePath: 'address1',
+                                flex: 1,
+                                mobileRow: 3,
+                             ),
+                            'Address2': GtTileField(
+                                displayKey: true,
+                                row: 2,
+                                valuePath: 'address2',
+                                flex: 1,
+                                mobileRow: 4,
+                             ),
+                            'Place ': GtTileField(
+                                displayKey: true,
+                                row: 3,
+                                valuePath: 'place',
+                                flex: 1,
+                                mobileRow: 5,
+                             ),
+                            'City': GtTileField(
+                                displayKey: true,
+                                row: 3,
+                                valuePath: 'city',
+                                flex: 1,
+                                mobileRow: 6,
+                             ),
+                            'Pin Code': GtTileField(
+                                displayKey: true,
+                                row: 4,
+                                valuePath: 'pincode',
+                                flex: 1,
+                                mobileRow: 7,
+                             ),
+                            'Email Id': GtTileField(
+                                displayKey: true,
+                                row: 4,
+                                valuePath: 'emailid',
+                                flex: 1,
+                                mobileRow: 8,
+                             ),
+                            'Bank Branch Code': GtTileField(
+                                displayKey: true,
+                                row: 5,
+                                valuePath: 'bankbranchcode',
+                                flex: 1,
+                                mobileRow: 9,
+                             ),
+                            'Bank Name': GtTileField(
+                                displayKey: true,
+                                row: 5,
+                                valuePath: 'bankname',
+                                flex: 1,
+                                mobileRow: 10,
+                             ),
+                            'Personal Mobile No': GtTileField(
+                                displayKey: false,
+                                row: 6,
+                                valuePath: 'mobileno',
+                                flex: 1,
+                                mobileRow: 10,
+                             ),
+                        },
+                        listItems: {
+                             'email': 'manish98@gmail.com',
+                             'bloodgroup': 'O+',
+                             'address1': 'Mumbai',
+                             'address2': 'Juinagar',
+                             'place': '121212434',
+                             'city': 'KHARGHAR',
+                             'pincode': '410210',
+                             'emailid': 'manish98@gmail.com',
+                             'bankbranchcode': '000291',
+                             'bankname': 'HDFC Bank',
+                             'mobileno': '9082948703'
+                        },
+                    ),
+                 );
+              }
+         }
+
 
 
       ```
      
       - Step 3 : Result :
 
-      ![DynamicView](https://user-images.githubusercontent.com/82582302/119483390-8a59e280-bd72-11eb-8f7b-bb133db07a8e.png)
+      ![DynamicView](https://user-images.githubusercontent.com/82582302/119606408-2f76c880-be10-11eb-992e-a3b6bc7b4ac5.png)
 
        
