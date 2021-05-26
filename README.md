@@ -2105,8 +2105,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                         listItems: {
                              'email': 'manish98@gmail.com',
                              'bloodgroup': 'O+',
-                             'address1': 'Mumbai',
-                             'address2': 'Juinagar',
+                             'address1': 'Khamothe',
+                             'address2': 'Belpada',
                              'place': '121212434',
                              'city': 'KHARGHAR',
                              'pincode': '410210',
@@ -2126,6 +2126,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
      
       - Step 3 : Result :
 
-      ![DynamicView](https://user-images.githubusercontent.com/82582302/119606408-2f76c880-be10-11eb-992e-a3b6bc7b4ac5.png)
+      ![DynamicView](https://user-images.githubusercontent.com/82582302/119608692-fe989280-be13-11eb-962f-91d64ba5f646.png)
+
 
        
