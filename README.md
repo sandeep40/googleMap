@@ -1881,7 +1881,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                      return Scaffold(
                         appBar: GtAppBar(
                            title: GtText(
-                             text: 'AppBar',
+                             text: 'SideAppBar',
                             )
                       ),
                       drawer: Drawer(
