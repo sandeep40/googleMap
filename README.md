@@ -2177,15 +2177,15 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
 
    - Example
 
-    ```dart  
+   ```dart  
          void changeStrokeWidthOnPressed()
-          {
+         {
                 int min = 1;
                 int max = 10;
                 int selection = min + (Random().netInt(max - min));
                  strokedWidth = selection.roundToDouble();
-          }
-    ```
+        }
+   ```
       - saveSignOnPressed - Function - Save the signature of draw function.
 
    - Example
