@@ -2176,7 +2176,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - changeStrokedWidthOnPressed - Function - Change signature width function. 
 
    - Example
-    ```dart  
+
+ ```dart  
          void changeStrokeWidthOnPressed()
           {
                 int min = 1;
@@ -2184,7 +2185,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                 int selection = min + (Random().netInt(max - min));
                  strokedWidth = selection.roundToDouble();
           }
-     ```
+ ```
       - saveSignOnPressed - Function - Save the signature of draw function.
 
    - Example
