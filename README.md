@@ -2189,7 +2189,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - saveSignOnPressed - Function - Save the signature of draw function.
 
    - Example
-   ```dart
+         ```dart
              void saveSignOnPressed()
               {
                    ByteData _img = ByteData(0);
@@ -2204,17 +2204,17 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                           _img=data
                          })
                }
-   ```
+      ```
       - backgroundColor - Color - Widget background Color.
       - signaturePadBackgroundColor - Color - Signature Pad background Color.
       - sign - GlobalKey - Global key for widget.
 
    - Example
-   ```dart
+    ```dart
 
       final sign = GlobalKey<SignatureState>();
 
-   ```
+     ```
       - signClearOnPressed - Function - clear pad signature funtion.
 
    - Example
@@ -2224,13 +2224,13 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
             final sign1 = sign.currentState;
               sign1.clear();
            }
-     ```
+   ```
    - Example
    ```dart
          import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
-   ```
+    ```
       - Step 2: Used GtSignature widget as shown below emaple.
-   ```dart
+    ```dart
          class SignatureDemo extends StatelessWidget {
          @override
          Widget build(BuildContext context) {
@@ -2245,10 +2245,10 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
             );
          }
         }
-   ```
+    ```
  
- - Step 3 : Result :
-      ![SSsignature](https://user-images.githubusercontent.com/82582302/120763656-10c1b180-c535-11eb-9641-5183a08a217a.png)
+    - Step 3 : Result :
+        ![SSsignature](https://user-images.githubusercontent.com/82582302/120763656-10c1b180-c535-11eb-9641-5183a08a217a.png)
 
 
 
@@ -2279,13 +2279,13 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
     
       - Step 1 : Import UI kit in files that it will be used:
 
-   ```dart
+      ```dart 
          import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
-   ```
+      ```
 
       - Step 2 : Used GtFileUpload widget as shown below example.
                 
-   ```dart
+         ```dart
             void onPressed(dynamic files) async {
              // Browse files or drag files available in parametere
              // do code here as required
@@ -2304,7 +2304,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
               }
           }
 
-   ```
+       ```
        - selectedFiles - String - This reperesent the selected files name show in UI.
        - iconUpload - IconData - Icon for upload files, Default Icon is Icons.cloud_upload.
        - iconColor - Color - Icon color, Default color is grey.
@@ -2317,12 +2317,12 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
 
       - Example
           Step 1 : Import UI kit in files that it will be used:
-   ```dart
+       ```dart
         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
-   ```
-   ```dart
-    - Step 2 : Used GtSignature widget as shown below example.
-       class FileUploadDemo extends StatelessWidget {
+       ```
+       - Step 2 : Used GtSignature widget as shown below example.
+       ```dart
+         class FileUploadDemo extends StatelessWidget {
          @override
          Widget build(BuildContext context) {
             return Scaffold(
@@ -2337,8 +2337,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                   ))),
             );
          }
-      }
-   ```
+        }
+      ```
      
       - Step 3 : Result :
                 
