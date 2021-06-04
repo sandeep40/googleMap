@@ -2215,23 +2215,25 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
    ```dart
 
       final sign = GlobalKey<SignatureState>();
-
-     ```
-      - signClearOnPressed - Function - clear pad signature funtion.
+    ```
+    - signClearOnPressed - Function - clear pad signature funtion.
 
    - Example
-   ```dart
+
+    ```dart
           void signClearOnPressed()
            {
             final sign1 = sign.currentState;
               sign1.clear();
            }
-   ```
-   - Example
-   ```dart
-         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
     ```
+    - Example
+
+     ```dart
+         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
+     ```
       - Step 2: Used GtSignature widget as shown below emaple.
+      
     ```dart
          class SignatureDemo extends StatelessWidget {
          @override
