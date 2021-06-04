@@ -2212,7 +2212,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
 
    - Example
 
-   ```dart
+    ```dart
 
       final sign = GlobalKey<SignatureState>();
     ```
@@ -2233,7 +2233,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
          import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
      ```
       - Step 2: Used GtSignature widget as shown below emaple.
-      
+
     ```dart
          class SignatureDemo extends StatelessWidget {
          @override
