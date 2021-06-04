@@ -2290,7 +2290,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
 
       - Step 2 : Used GtFileUpload widget as shown below example.
                 
-         ```dart
+       ```dart
             void onPressed(dynamic files) async {
              // Browse files or drag files available in parametere
              // do code here as required
@@ -2310,15 +2310,15 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
           }
 
        ```
-       - selectedFiles - String - This reperesent the selected files name show in UI.
-       - iconUpload - IconData - Icon for upload files, Default Icon is Icons.cloud_upload.
-       - iconColor - Color - Icon color, Default color is grey.
-       - iconSize - double - Size of icon and default size is 100.0.
-       - fileNameShow - bool - Selected Files name show or not in UI, Default is true.
-       - buttonColor - Color - Browse Button color Default color is blue.
-       - iconShow - bool - Icon is shown or not in UI, Default is true.
-       - fontSize - double - Size of Fonts in UI, Default size is 20.
-       - extensions - String - This is Allow to Which Files is Taken from Browse. Pass the extension in string like "pdf,jpg,doc".
+        - selectedFiles - String - This reperesent the selected files name show in UI.
+        - iconUpload - IconData - Icon for upload files, Default Icon is Icons.cloud_upload.
+        - iconColor - Color - Icon color, Default color is grey.
+        - iconSize - double - Size of icon and default size is 100.0.
+        - fileNameShow - bool - Selected Files name show or not in UI, Default is true.
+        - buttonColor - Color - Browse Button color Default color is blue.
+        - iconShow - bool - Icon is shown or not in UI, Default is true.
+        - fontSize - double - Size of Fonts in UI, Default size is 20.
+        - extensions - String - This is Allow to Which Files is Taken from Browse. Pass the extension in string like "pdf,jpg,doc".
 
       - Example
           Step 1 : Import UI kit in files that it will be used:
