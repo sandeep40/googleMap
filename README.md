@@ -1567,11 +1567,11 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
    - Input Parameters of GtCalendar Widget   
       - firstDate - DateTime - Sets the min date range of the calendar. 
       - lastDate - DateTime - Sets the max date range of the calendar.
-      - focusedDay - DateTime - 
-      - selectedDay - DateTime - .
+      - focusedDay - DateTime - Focused of selected day.
+      - selectedDay - DateTime - Select the particular day of the calendar .
       - rangeStartDay - DateTime - To set range of start day of the calendar.
       - rangeEndDay - DateTime - To set range of end day of the calendar.
-      - calendarFormat - CalenderFormate - Specifies TableCalendar's current format.
+      - calendarFormat - CalenderFormate - Sets calendarFormat.
       - rangeSelectionMode - RangeSelectionMode - Current mode of range selection. 
       - eventLoader - Function(DateTime) List<dynamic> - To call eventLoader Function.
       - calenderStyle - CalenderStyle - To set calenderStyle.
@@ -1579,7 +1579,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - onDaySelected - Function(DateTime, DateTime) - To call onDaySelected function.
       - onRangeSelected - Function(DateTime, DateTime) - To call onRangeSelected function.
       - onFormatChanged - Function(CalendarFormat) - To call onFormateChanged function.
-      - onPageChanged - Function(DateTime) - To call onPageChanged function.
+      - onPageChanged - Function(DateTime) - Function to call onPageChanged function.
       - eventViewer - Widget - To call eventViewer Widget.
               
    - Example
@@ -1641,7 +1641,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - currency - String - Sets the min date range of the calendar.
       - labelTextStyle - TextStyle -  Sets the max date range of the calendar.
       - amountTextStyle - TextStyle - Function to handle Onch- 
-         - horizontalView - bool - Decide the position of label.
+      - horizontalView - bool - Decide the position of label.
          
    - Example
     
