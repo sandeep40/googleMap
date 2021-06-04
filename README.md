@@ -1573,13 +1573,13 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - rangeEndDay - DateTime - To set range of end day of the calendar.
       - calendarFormat - CalenderFormate - Specifies TableCalendar's current format.
       - rangeSelectionMode - RangeSelectionMode - Current mode of range selection. 
-      - eventLoader - Function(DateTime) List<dynamic> - Function that assigns a list of events to a specified day.
-      - calenderStyle - CalenderStyle - Style for TableCalendar's content.
+      - eventLoader - Function(DateTime) List<dynamic> - To call eventLoader Function.
+      - calenderStyle - CalenderStyle - To set calenderStyle.
       - calenderBuilder - CalendarBuilders - Class containing all custom builders for TableCalendar
-      - onDaySelected - Function(DateTime, DateTime) - Called whenever any day gets long pressed.
-      - onRangeSelected - Function(DateTime, DateTime) - Called whenever a day range gets selected.
-      - onFormatChanged - Function(CalendarFormat) - Called whenever calendarFormat is changed.
-      - onPageChanged - Function(DateTime) - Called whenever currently visible calendar page is changed.
+      - onDaySelected - Function(DateTime, DateTime) - To call onDaySelected function.
+      - onRangeSelected - Function(DateTime, DateTime) - To call onRangeSelected function.
+      - onFormatChanged - Function(CalendarFormat) - To call onFormateChanged function.
+      - onPageChanged - Function(DateTime) - To call onPageChanged function.
       - eventViewer - Widget - To call eventViewer Widget.
               
    - Example
