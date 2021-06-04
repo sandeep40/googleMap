@@ -26,7 +26,7 @@
  - [GtAppSideBar Widget](#gtappsidebar-widget)
  - [GtDynamicView Widget](#gtdynamicview-widget)
  - [GtSignature Widget](#gtsignature-widget)
- - [GtFileUpload Widget](#gtfileUploadwidget)
+ - [GtFileUpload Widget](#gtfileupload-widget)
  
  
  
@@ -2157,7 +2157,9 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - More properties/options are available to make widget pretty good.
             
    - Constructors: 
-          - [GtSignature](components.md#gtbutton-widget)({  this.color = Colors.black,
+          - [GtSignature](components.md#gtbutton-widget)
+             ({ 
+               this.color = Colors.black,
                this.strokeWidth = 2.0,
                this.changeColorOnPressed,
                this.changeStrokeWidthOnPressed,
