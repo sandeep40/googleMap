@@ -2186,7 +2186,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
                  strokedWidth = selection.roundToDouble();
           }
    ```
-   - saveSignOnPressed - Function - Save the signature of draw function.
+      - saveSignOnPressed - Function - Save the signature of draw function.
 
    - Example
    ```dart
