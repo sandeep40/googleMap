@@ -1567,7 +1567,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
    - Input Parameters of GtCalendar Widget   
       - firstDate - DateTime - Sets the min date range of the calendar. 
       - lastDate - DateTime - Sets the max date range of the calendar.
-      - focusedDay - DateTime - Focused of selected day.
+      - focusedDay - DateTime - Focused on selected day.
       - selectedDay - DateTime - Select the particular day of the calendar .
       - rangeStartDay - DateTime - To set range of start day of the calendar.
       - rangeEndDay - DateTime - To set range of end day of the calendar.
@@ -1578,7 +1578,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - calenderBuilder - CalendarBuilders - Class containing all custom builders for TableCalendar
       - onDaySelected - Function(DateTime, DateTime) - To call onDaySelected function.
       - onRangeSelected - Function(DateTime, DateTime) - To call onRangeSelected function.
-      - onFormatChanged - Function(CalendarFormat) - To call onFormateChanged function.
+      - onFormatChanged - Function(CalendarFormat) - This function change the format of calendar.
       - onPageChanged - Function(DateTime) - Function to call onPageChanged function.
       - eventViewer - Widget - To call eventViewer Widget.
               
