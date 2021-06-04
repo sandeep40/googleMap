@@ -2189,7 +2189,8 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       - saveSignOnPressed - Function - Save the signature of draw function.
 
    - Example
-         ```dart
+
+      ```dart
              void saveSignOnPressed()
               {
                    ByteData _img = ByteData(0);
