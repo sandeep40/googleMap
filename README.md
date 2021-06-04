@@ -25,6 +25,8 @@
  - [GtButton Widget](#gtbutton-widget)
  - [GtAppSideBar Widget](#gtappsidebar-widget)
  - [GtDynamicView Widget](#gtdynamicview-widget)
+ - [GtSignature Widget](#gtsignature-widget)
+ - [GtFileUpload Widget](#gtfileUploadwidget)
  
  
  
@@ -1545,18 +1547,41 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
       
    - Constructors: 
           - [GtCalendar](components.md#gtcalendar-widget)(
-            {  this.initialDate,
-               this.firstDate,
-               this.lastDate,
-               this.onDateChanged,
-                            });
-  
+            {  @required this.focusedDay,
+               @required this.firstDate,
+               @required this.lastDate,
+               @required this.selectedDay,
+               this.rangeEndDay,
+               this.calendarFormat,
+               this.rangeSelectionMode,
+               this.eventLoader,
+               this.calendarStyle,
+               this.calendarBuilders,
+               this.onDaySelected,
+               this.onRangeSelected,
+               this.onFormatChanged,
+               this.onPageChanged,
+               this.eventViewer
+               });
+        
    - Input Parameters of GtCalendar Widget   
-      - initialDate - DateTime - Sets the initial date before the widget to displayed when widget is opened.
-      - firstDate - DateTime - Sets the min date range of the calendar.
-      - lastDate - DateTime -  Sets the max date range of the calendar.
-      - onDateChanged - Function(DateTime date) - Function to handle Onchange event of date..
-         
+      - firstDate - DateTime -  
+      - lastDate - DateTime - 
+      - focusedDay - DateTime - 
+      - selectedDay - DateTime - 
+      - rangeStartDay - DateTime - 
+      - rangeEndDay - DateTime - 
+      - calendarFormat - CalenderFormate - 
+      - rangeSelectionMode - RangeSelectionMode - 
+      - eventLoader - Function(DateTime) List<dynamic> - 
+      - calenderStyle - CalenderStyle - 
+      - calenderBuilder - CalendarBuilders - 
+      - onDaySelected - Function(DateTime, DateTime) - 
+      - onRangeSelected - Function(DateTime, DateTime) - 
+      - onFormatChanged - Function(CalendarFormat) - 
+      - onPageChanged - Function(DateTime) - 
+      - eventViewer - Widget - 
+              
    - Example
     
       - Step 1 : Import UI kit in files that it will be used:
@@ -1806,60 +1831,56 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
        
         ![imbtn](https://user-images.githubusercontent.com/47977097/115863019-7dd02a80-a452-11eb-92b1-4706b7b40855.png)
 
-        
-
-
-
-
 # GtAppSideBar Widget
-  
- The GtAppSideBar widget are two primary options for navigation tabs and drawers when there is insufficient space to support tabs, drawers.
+
+   The GtAppSideBar widget are two primary options for navigation tabs and drawers when there is insufficient space to support tabs, drawers.
+
    - Benefits of GtAppSideBar Widget
+
       - SideBar is design used in app secondary menu design.
 
-      - We can use vertical space of mobile screens optimally because most of the users in most cases use portraint   mode of app orientation against landscape mode.
+      - We can use vertical space of mobile screens optimally because most of the users in most cases use portraint mode of app orientation against landscape mode.
 
-      - SideBar can cover a number of navigation opetions campared to tiny main navigation bar situated either on the top or bottm of the app Even users cna scroll it further to access hidden buttons or content.
+     - SideBar can cover a number of navigation opetions campared to tiny main navigation bar situated either on the top or bottm of the app Even users cna scroll it further to access hidden buttons or content.
 
-      - SideBar can provide clear and clutter free desing.
-     
-      
-   - Constructors: 
-          - [GtAppSideBar](components.md#gtbutton-widget)(
-            {  @required this.listApp,
-               @required this.isItemSelected,
-               @required this.toolTipMessageField,
-               @required this.getAvatarWidgeContent,
-               this.selectedindex,
-               this.onTapHandler,
-               this.trailingWidget,
-               this.navigationBackGround = Colors.white,
-               this.selectedRowColor = Colors.blueGrey,
-               this.selectedRowDarkColor = Colors.grey,
-               this.iconColor = Colors.black,
-               this.leadingWidget,
-               this.backGroundColor = Colors.white,
-               this.width = 60.0,
-               this.railTextWidget
-            });
-  
-   - Input Parameters of GtAppSideBar Widget 
-      - listApps - List<dynamic> - This is fine for short list but not for a long list.
-      - trailingWidget - List<Widget> - List are made up of multiple rows of items, which include text, buttons, toggles, icons, thumbnails, and many more.
-      - selectedindex - int - The index into destinations for the current selected
-      - onTapHandler - Function - Function to call ListApp onTapHandler.
-      - navigationBackGroundColor - Color - To set navigationBackGroundColor.
-      - selectedRowColor - Color - Provide Row color selected row. 
-      - selectedRowDarkColor - Color - Set Row color dark selected row.
-      - iconColor - Color - To set the icon color.
-      - isItemSelected - Function(dynamic obj) - To call function which item selected.
-      - getAvatarWidgetContent - Function(dynamic obj) - To call getAvatarWidgetContent function. 
-      - toolTipMessageContent - Function(dynamic obj) - To call toolTipMessageContent function. 
-      - leadingWidget - Widget- A widget to display before the toolbar's title.
-      - backGroundColor - Color - To sets backgroundcolor.
-      - width - double - To set width in double data type.
-      - railTextWidget - Function(dynamic obj) - To call railTextWidget function.
+     - SideBar can provide clear and clutter free desing.
 
+   - Constructors: - GtAppSideBar
+     ({
+        @required this.listApp, 
+        @required this.isItemSelected,
+        @required this.   toolTipMessageField, 
+        @required this.getAvatarWidgeContent, 
+        this.selectedindex, 
+        this.onTapHandler, 
+        this.trailingWidget,
+        this.navigationBackGround = Colors.white,
+        this.selectedRowColor = Colors.blueGrey, 
+        this.selectedRowDarkColor = Colors.grey, 
+        this.iconColor = Colors.black, this.leadingWidget, 
+        this.backGroundColor = Colors.white, 
+        this.width = 60.0, 
+        this.railTextWidget 
+     });
+
+   - Input Parameters of GtAppSideBar Widget
+
+     - listApps - List - This is fine for short list but not for a long list.
+     - trailingWidget - List - List are made up of multiple rows of items, which include text, buttons, toggles, icons,  thumbnails, and many more.
+     - selectedindex - int - The index into destinations for the current selected
+     -  onTapHandler - Function - Function to call ListApp onTapHandler.
+     - navigationBackGroundColor - Color - To set navigationBackGroundColor.
+     - selectedRowColor - Color - Provide Row color selected row.
+     - selectedRowDarkColor - Color - Set Row color dark selected row.
+     - iconColor - Color - To set the icon color.
+     - isItemSelected - Function(dynamic obj) - To call function which item selected.
+     - getAvatarWidgetContent - Function(dynamic obj) - To call getAvatarWidgetContent function.
+     - toolTipMessageContent - Function(dynamic obj) - To call toolTipMessageContent function.
+     - leadingWidget - Widget- A widget to display before the toolbar's title.
+     - backGroundColor - Color - To sets backgroundcolor.
+     - width - double - To set width in double data type.
+     - railTextWidget - Function(dynamic obj) - To call railTextWidget function.
+       
          
    - Example
     
@@ -2128,5 +2149,200 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
 
       ![DynamicView](https://user-images.githubusercontent.com/82582302/119608692-fe989280-be13-11eb-962f-91d64ba5f646.png)
 
+# GtSignature Widget
+  
+  The GtSignature widget is used represent to allow users to sign with finger and export the result as image.
+   - Benefits of GtSignature Widget
+      - Provided teh options Save and Clear Buttons.
+      - More properties/options are available to make widget pretty good.
+            
+   - Constructors: 
+          - [GtSignature](components.md#gtbutton-widget)({  this.color = Colors.black,
+               this.strokeWidth = 2.0,
+               this.changeColorOnPressed,
+               this.changeStrokeWidthOnPressed,
+               this.saveSignOnPressed,
+               this.backgroundColor = Colors.white54, 
+               this.signaturePadBackgroundColor = Colors.white70,
+               this.sign,
+               this.signClearOnPressed,
+               });
+              
+  
+   - Input Parameters of GtSignature Widget 
+      - color - Color - signature color.
+      - strokeWwidth - double - width of signature line. Default value is 2.0.
+      - changeColorOnPressed - Funtion - Change Color of signature function.
+      - changeStrokedWidthOnPressed - Function - Change signature width function. 
+
+   - Example
+    ```dart  
+         void changeStrokeWidthOnPressed()
+          {
+                int min = 1;
+                int max = 10;
+                int selection = min + (Random().netInt(max - min));
+                 strokedWidth = selection.roundToDouble();
+          }
+     ```
+      - saveSignOnPressed - Function - Save the signature of draw function.
+
+   - Example
+      ```dart
+             void saveSignOnPressed()
+              {
+                   ByteData _img = ByteData(0);
+                   final sign= _sign.currentState;
+                   //retrieve image data, do whatever you want with it (send to server, save locally...)
+                   final image await sign.getData();
+                   var data = await image.toByteData(format: ui.imageByteFormat.png);
+                   sign.clear();
+                   final encoded = base64.encode(data.buffer.asUint8List());
+                       setState(()
+                         {
+                          _img=data
+                         })
+               }
+      ```
+      - backgroundColor - Color - Widget background Color.
+      - signaturePadBackgroundColor - Color - Signature Pad background Color.
+      - sign - GlobalKey - Global key for widget.
+
+   - Example
+     ```dart
+
+      final sign = GlobalKey<SignatureState>();
+
+     ```
+      - signClearOnPressed - Function - clear pad signature funtion.
+
+   - Example
+     ```dart
+          void signClearOnPressed()
+           {
+            final sign1 = sign.currentState;
+              sign1.clear();
+           }
+     ```
+   - Example
+     ```dart
+         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
+      ```
+      - Step 2: Used GtSignature widget as shown below emaple.
+      ```dart
+         class SignatureDemo extends StatelessWidget {
+         @override
+         Widget build(BuildContext context) {
+            return Scaffold(
+               body: Center(
+               child: Container(
+                  width: 200,height: 100,
+                  child: GtSignature(
+                  color: Colors.black,
+                  signaturePadBackgroundColor: Colors.grey[200],
+               ))),
+            );
+         }
+        }
+  ```
+ 
+ - Step 3 : Result :
+      ![SSsignature](https://user-images.githubusercontent.com/82582302/120763656-10c1b180-c535-11eb-9641-5183a08a217a.png)
+
+
+
+# GtFileUpload Widget
+  
+ The GtFileUpload widget is used represent to allow users to file upload with Browse button and Drag and drop files in web, For Mobile only Browse button for file upload.
+   - Benefits of GtFileUpload Widget
+       - Provided the options Browse button and Drag and Drop Files.
+       - More properties/options are available to make widget pretty good.
+      
+   - Constructors: - GtFileUpload
+      ({
+         this.backgroundColor = Colors.white,
+         this.borderColor = Colors.black,
+         this.onPressed, this.selectedFiles, 
+         this.iconUpload = Icons.cloud_upload, 
+         this.iconColor = Colors.grey, 
+         this.iconSize = 100.0, this.fileNameShow = true, 
+         this.buttonColor = Colors.blue, this.iconShow = true,
+         this.fontSize = 20, this.extensions,
+      });
+  
+   - Input Parameters of GtFileUpload Widget
+      - backgroundColor - Color - Back Ground color of widget, Default color is White.
+      - borderColor - Color - Widget border color, Default color is black.
+      - onPressed - Function(dynamic) - This function return browse files or Drag file. Example Below.    
+   - Example
+    
+      - Step 1 : Import UI kit in files that it will be used:
+
+      ```dart
+         import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
+      ```
+
+      - Step 2 : Used GtFileUpload widget as shown below example.
+                
+      ```dart
+            void onPressed(dynamic files) async {
+             // Browse files or drag files available in parametere
+             // do code here as required
+             String fileName;
+             selectedFilesName.value = "";
+              if(kIsWeb){
+                 files.forEach((e) => {
+                  selectedFilesName.value = selectedFilesName.value == null || selectedFilesName.value == "" ? e.name : selectedFilesName.value + ", " + e.name,
+                 });
+               }
+            else{
+                  files.forEach((e) => {
+                    fileName = e.absolute.toString().substring(e.absolute.toString().lastIndexOf("/") + 1 ),
+                    selectedFilesName.value = selectedFilesName.value == null || selectedFilesName.value == "" ? fileName : selectedFilesName.value + ", " + fileName,
+                  });
+              }
+          }
+
+      ```
+       - selectedFiles - String - This reperesent the selected files name show in UI.
+       - iconUpload - IconData - Icon for upload files, Default Icon is Icons.cloud_upload.
+       - iconColor - Color - Icon color, Default color is grey.
+       - iconSize - double - Size of icon and default size is 100.0.
+       - fileNameShow - bool - Selected Files name show or not in UI, Default is true.
+       - buttonColor - Color - Browse Button color Default color is blue.
+       - iconShow - bool - Icon is shown or not in UI, Default is true.
+       - fontSize - double - Size of Fonts in UI, Default size is 20.
+       - extensions - String - This is Allow to Which Files is Taken from Browse. Pass the extension in string like "pdf,jpg,doc".
+
+      - Example
+          Step 1 : Import UI kit in files that it will be used:
+   ```dart
+        import 'package:greytrix_ui_kit/greytrix_ui_kit.dart';
+   ```
+   ```dart
+    - Step 2 : Used GtSignature widget as shown below example.
+       class FileUploadDemo extends StatelessWidget {
+         @override
+         Widget build(BuildContext context) {
+            return Scaffold(
+               body: Center(
+               child: Obx(() => Container(
+                  child: GtFileUpload(
+                     backgroundColor: Colors.blue[100],
+                     onPressed: controller.openFileExplorer,
+                     selectedFiles: controller.selectedFilesName.value,
+                     extensions: "pdf,doc,jpg",
+                     )
+                  ))),
+            );
+         }
+      }
+  ```
+     
+      - Step 3 : Result :
+                
+           ![image](https://user-images.githubusercontent.com/82582302/120767002-6a77ab00-c538-11eb-8398-5ffe65d789c8.png)
+
 
        
+    
