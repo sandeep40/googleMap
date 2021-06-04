@@ -1567,15 +1567,15 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
    - Input Parameters of GtCalendar Widget   
       - firstDate - DateTime -  To set first initial date. 
       - lastDate - DateTime - To set end of the date.
-      - focusedDay - DateTime - We will shift focus from day. 
-      - selectedDay - DateTime - 
+      - focusedDay - DateTime - DateTime that determines which days are currently visible and focused.
+      - selectedDay - DateTime - Custom builder for day cells that are currently marked as selected.
       - rangeStartDay - DateTime - Custom builder for a day cell that is the start of current range selection.
       - rangeEndDay - DateTime - Custom a day cell that is the end of current range day.
-      - calendarFormat - CalenderFormate - Set Calender format.
+      - calendarFormat - CalenderFormate - Specifies TableCalendar's current format.
       - rangeSelectionMode - RangeSelectionMode - 
       - eventLoader - Function(DateTime) List<dynamic> - 
-      - calenderStyle - CalenderStyle - 
-      - calenderBuilder - CalendarBuilders - 
+      - calenderStyle - CalenderStyle - Style for TableCalendar's content.
+      - calenderBuilder - CalendarBuilders -  
       - onDaySelected - Function(DateTime, DateTime) - 
       - onRangeSelected - Function(DateTime, DateTime) - 
       - onFormatChanged - Function(CalendarFormat) - 
