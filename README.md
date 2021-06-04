@@ -2212,8 +2212,7 @@ The GtIconCheckbox widget is combination of Icon and chexbox widget on the Scree
 
    - Example
 
-    ```dart
-
+   ```dart
       final sign = GlobalKey<SignatureState>();
 
    ```
